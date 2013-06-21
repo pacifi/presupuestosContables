@@ -5,9 +5,7 @@
 package ppm.contable.proyecto.modelo;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,10 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -40,10 +36,8 @@ public class PpmPeriodo implements Serializable {
     @Column(name = "estado")
     private String estado;
     @Basic(optional = false)
-    @Column(name = "a\u00f1o_pronostico")
-    private String añoPronostico;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPeriodo")
-    private Collection<PpmProyecto> ppmProyectoCollection;
+    @Column(name = "anio_pronostico")
+    private String anioPronostico;
 
     public PpmPeriodo() {
     }
@@ -52,10 +46,10 @@ public class PpmPeriodo implements Serializable {
         this.idPeriodo = idPeriodo;
     }
 
-    public PpmPeriodo(Integer idPeriodo, String estado, String añoPronostico) {
+    public PpmPeriodo(Integer idPeriodo, String estado, String anioPronostico) {
         this.idPeriodo = idPeriodo;
         this.estado = estado;
-        this.añoPronostico = añoPronostico;
+        this.anioPronostico = anioPronostico;
     }
 
     public Integer getIdPeriodo() {
@@ -74,21 +68,12 @@ public class PpmPeriodo implements Serializable {
         this.estado = estado;
     }
 
-    public String getAñoPronostico() {
-        return añoPronostico;
+    public String getAnioPronostico() {
+        return anioPronostico;
     }
 
-    public void setAñoPronostico(String añoPronostico) {
-        this.añoPronostico = añoPronostico;
-    }
-
-    @XmlTransient
-    public Collection<PpmProyecto> getPpmProyectoCollection() {
-        return ppmProyectoCollection;
-    }
-
-    public void setPpmProyectoCollection(Collection<PpmProyecto> ppmProyectoCollection) {
-        this.ppmProyectoCollection = ppmProyectoCollection;
+    public void setAnioPronostico(String anioPronostico) {
+        this.anioPronostico = anioPronostico;
     }
 
     @Override

@@ -4,10 +4,16 @@
  */
 package ppm.contable.proyecto.servicio;
 
+import java.util.List;
+import ppm.contable.proyecto.modelo.PpmProducto;
+
 /**
  *
  * @author Pacifi
  */
 public interface ProductoServicio {
+    
+    public List<PpmProducto> listarProducto();
+    public void insertaPeriodo(PpmProducto producto);
     
 }

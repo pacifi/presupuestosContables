@@ -27,7 +27,7 @@ public class PeriodoDaoImplent implements PeriodoDao{
     
      @Override
     public void insertarPeriodo(PpmPeriodo periodo ){
-        System.out.println(periodo.getAñoPronostico());        
+                
           Session session =sesionFactory.openSession();
           session.beginTransaction().begin();
           //  session.persist(periodo);

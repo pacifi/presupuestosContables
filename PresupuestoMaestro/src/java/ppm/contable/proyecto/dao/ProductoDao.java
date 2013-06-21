@@ -13,4 +13,5 @@ import ppm.contable.proyecto.modelo.PpmProducto;
  */
 public interface ProductoDao {
      List<PpmProducto> listarProducto();
+     public void insertaProducto( PpmProducto producto);
 }

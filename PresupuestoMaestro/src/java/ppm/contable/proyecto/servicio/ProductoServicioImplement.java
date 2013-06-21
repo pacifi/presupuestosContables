@@ -17,16 +17,21 @@ import ppm.contable.proyecto.modelo.PpmProducto;
  */
 @Service
 @Transactional(propagation= Propagation.SUPPORTS,readOnly = true)
-public class ProductoServicioImplement {
+public class ProductoServicioImplement implements ProductoServicio{
 
     @Autowired
     public ProductoDao dao;
     
+    @Override
      public List<PpmProducto> listarProducto(){
      
          return dao.listarProducto();
          
      }
+    
+    public void insertaPeriodo(PpmProducto producto){
+        dao.insertaProducto(producto);
+    }
  
     
     

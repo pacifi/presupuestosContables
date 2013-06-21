@@ -11,5 +11,7 @@
     <body>
 
         <a href="reporte.pacifi">ir periodo</a>       
+        <a href="reporteProducto.pacifi">ir periodo</a>       
+        <a href="formProducto.pacifi">ir periodo</a>       
     </body>
 </html>

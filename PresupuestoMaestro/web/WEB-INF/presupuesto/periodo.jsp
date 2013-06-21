@@ -42,8 +42,8 @@
             </table>
 
         </c:if>
-         <a href="index.dmp">Ir Inicio</a>
+         <a href="index.pacifi">Ir Inicio</a>
          
          
     </body>
-</html>
+</html>w

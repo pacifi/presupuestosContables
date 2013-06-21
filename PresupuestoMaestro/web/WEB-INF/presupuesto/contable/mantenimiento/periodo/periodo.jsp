@@ -19,7 +19,7 @@
             <table border="1">
                 <thead>
                     <tr>
-                        <th colspan="5"> Reporte Periodo</th>
+                        <th colspan="3"> Reporte Periodo</th>
                         
                     </tr>
                 </thead>
