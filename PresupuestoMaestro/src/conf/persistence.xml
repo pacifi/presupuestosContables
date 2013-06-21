@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="PresupuestoMaestroPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>ppm.contable.proyecto.modelo.PpmCatalogoCiv</class>
+    <class>ppm.contable.proyecto.modelo.PpmCatalogoConsumo</class>
+    <class>ppm.contable.proyecto.modelo.PpmMedidas</class>
+    <class>ppm.contable.proyecto.modelo.PpmCatalogoCif</class>
+    <class>ppm.contable.proyecto.modelo.PpmProducto</class>
+    <class>ppm.contable.proyecto.modelo.PpmPeriodo</class>
+    <class>ppm.contable.proyecto.modelo.PpmMeses</class>
+    <class>ppm.contable.proyecto.modelo.PpmProductoCif</class>
+    <class>ppm.contable.proyecto.modelo.PpmProductoCiv</class>
+    <class>ppm.contable.proyecto.modelo.PpmProductoConsumo</class>
+    <class>ppm.contable.proyecto.modelo.PpmProyecto</class>
+    <class>ppm.contable.proyecto.modelo.PpmPronosticoVenta</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dba_ppmaestro?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="123456"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+    </properties>
+  </persistence-unit>
+</persistence>
