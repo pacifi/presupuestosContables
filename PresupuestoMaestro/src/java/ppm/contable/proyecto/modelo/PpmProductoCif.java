@@ -17,6 +17,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -24,6 +25,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "ppm_producto_cif")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "PpmProductoCif.findAll", query = "SELECT p FROM PpmProductoCif p")})
 public class PpmProductoCif implements Serializable {

@@ -20,6 +20,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -27,6 +29,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "ppm_catalogo_consumo")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "PpmCatalogoConsumo.findAll", query = "SELECT p FROM PpmCatalogoConsumo p")})
 public class PpmCatalogoConsumo implements Serializable {
@@ -49,6 +52,9 @@ public class PpmCatalogoConsumo implements Serializable {
     @Basic(optional = false)
     @Column(name = "tipo_consumo")
     private String tipoConsumo;
+    @Basic(optional = false)
+    @Column(name = "codigo")
+    private String codigo;
     @JoinColumn(name = "id_medidas", referencedColumnName = "id_medidas")
     @ManyToOne(optional = false)
     private PpmMedidas idMedidas;
@@ -62,12 +68,13 @@ public class PpmCatalogoConsumo implements Serializable {
         this.idConsumo = idConsumo;
     }
 
-    public PpmCatalogoConsumo(Integer idConsumo, String nombreConsumo, BigDecimal precioUnitario, BigDecimal medidaBase, String tipoConsumo) {
+    public PpmCatalogoConsumo(Integer idConsumo, String nombreConsumo, BigDecimal precioUnitario, BigDecimal medidaBase, String tipoConsumo, String codigo) {
         this.idConsumo = idConsumo;
         this.nombreConsumo = nombreConsumo;
         this.precioUnitario = precioUnitario;
         this.medidaBase = medidaBase;
         this.tipoConsumo = tipoConsumo;
+        this.codigo = codigo;
     }
 
     public Integer getIdConsumo() {
@@ -110,6 +117,14 @@ public class PpmCatalogoConsumo implements Serializable {
         this.tipoConsumo = tipoConsumo;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
     public PpmMedidas getIdMedidas() {
         return idMedidas;
     }
@@ -118,6 +133,7 @@ public class PpmCatalogoConsumo implements Serializable {
         this.idMedidas = idMedidas;
     }
 
+    @XmlTransient
     public Collection<PpmProductoConsumo> getPpmProductoConsumoCollection() {
         return ppmProductoConsumoCollection;
     }

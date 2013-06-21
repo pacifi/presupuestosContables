@@ -19,6 +19,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -26,6 +28,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "ppm_proyecto")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "PpmProyecto.findAll", query = "SELECT p FROM PpmProyecto p")})
 public class PpmProyecto implements Serializable {
@@ -38,6 +41,12 @@ public class PpmProyecto implements Serializable {
     @Basic(optional = false)
     @Column(name = "nombre_presupuestos")
     private String nombrePresupuestos;
+    @Basic(optional = false)
+    @Column(name = "nombre_empresa")
+    private String nombreEmpresa;
+    @Basic(optional = false)
+    @Column(name = "codigo")
+    private String codigo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idProyecto")
     private Collection<PpmProducto> ppmProductoCollection;
     @JoinColumn(name = "id_periodo", referencedColumnName = "id_periodo")
@@ -51,9 +60,11 @@ public class PpmProyecto implements Serializable {
         this.idProyecto = idProyecto;
     }
 
-    public PpmProyecto(Integer idProyecto, String nombrePresupuestos) {
+    public PpmProyecto(Integer idProyecto, String nombrePresupuestos, String nombreEmpresa, String codigo) {
         this.idProyecto = idProyecto;
         this.nombrePresupuestos = nombrePresupuestos;
+        this.nombreEmpresa = nombreEmpresa;
+        this.codigo = codigo;
     }
 
     public Integer getIdProyecto() {
@@ -72,6 +83,23 @@ public class PpmProyecto implements Serializable {
         this.nombrePresupuestos = nombrePresupuestos;
     }
 
+    public String getNombreEmpresa() {
+        return nombreEmpresa;
+    }
+
+    public void setNombreEmpresa(String nombreEmpresa) {
+        this.nombreEmpresa = nombreEmpresa;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    @XmlTransient
     public Collection<PpmProducto> getPpmProductoCollection() {
         return ppmProductoCollection;
     }

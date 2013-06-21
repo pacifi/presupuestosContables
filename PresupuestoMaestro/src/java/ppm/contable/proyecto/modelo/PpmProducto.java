@@ -20,6 +20,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -27,6 +29,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "ppm_producto")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "PpmProducto.findAll", query = "SELECT p FROM PpmProducto p")})
 public class PpmProducto implements Serializable {
@@ -42,10 +45,10 @@ public class PpmProducto implements Serializable {
     @Basic(optional = false)
     @Column(name = "descripcion")
     private String descripcion;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
     @Column(name = "politica_invfin")
-    private long politicaInvfin;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    private BigDecimal politicaInvfin;
     @Basic(optional = false)
     @Column(name = "margen_ganancia")
     private BigDecimal margenGanancia;
@@ -68,7 +71,7 @@ public class PpmProducto implements Serializable {
         this.idProducto = idProducto;
     }
 
-    public PpmProducto(Integer idProducto, String nombreProducto, String descripcion, long politicaInvfin, BigDecimal margenGanancia) {
+    public PpmProducto(Integer idProducto, String nombreProducto, String descripcion, BigDecimal politicaInvfin, BigDecimal margenGanancia) {
         this.idProducto = idProducto;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
@@ -100,11 +103,11 @@ public class PpmProducto implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public long getPoliticaInvfin() {
+    public BigDecimal getPoliticaInvfin() {
         return politicaInvfin;
     }
 
-    public void setPoliticaInvfin(long politicaInvfin) {
+    public void setPoliticaInvfin(BigDecimal politicaInvfin) {
         this.politicaInvfin = politicaInvfin;
     }
 
@@ -124,6 +127,7 @@ public class PpmProducto implements Serializable {
         this.idProyecto = idProyecto;
     }
 
+    @XmlTransient
     public Collection<PpmProductoCiv> getPpmProductoCivCollection() {
         return ppmProductoCivCollection;
     }
@@ -132,6 +136,7 @@ public class PpmProducto implements Serializable {
         this.ppmProductoCivCollection = ppmProductoCivCollection;
     }
 
+    @XmlTransient
     public Collection<PpmProductoConsumo> getPpmProductoConsumoCollection() {
         return ppmProductoConsumoCollection;
     }
@@ -140,6 +145,7 @@ public class PpmProducto implements Serializable {
         this.ppmProductoConsumoCollection = ppmProductoConsumoCollection;
     }
 
+    @XmlTransient
     public Collection<PpmPronosticoVenta> getPpmPronosticoVentaCollection() {
         return ppmPronosticoVentaCollection;
     }
@@ -148,6 +154,7 @@ public class PpmProducto implements Serializable {
         this.ppmPronosticoVentaCollection = ppmPronosticoVentaCollection;
     }
 
+    @XmlTransient
     public Collection<PpmProductoCif> getPpmProductoCifCollection() {
         return ppmProductoCifCollection;
     }

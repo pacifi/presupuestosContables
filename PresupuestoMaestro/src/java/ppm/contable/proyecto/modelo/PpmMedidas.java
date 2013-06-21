@@ -17,6 +17,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -24,6 +26,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "ppm_medidas")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "PpmMedidas.findAll", query = "SELECT p FROM PpmMedidas p")})
 public class PpmMedidas implements Serializable {
@@ -79,6 +82,7 @@ public class PpmMedidas implements Serializable {
         this.abreviatura = abreviatura;
     }
 
+    @XmlTransient
     public Collection<PpmCatalogoConsumo> getPpmCatalogoConsumoCollection() {
         return ppmCatalogoConsumoCollection;
     }
