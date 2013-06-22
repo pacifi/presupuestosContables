@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import ppm.contable.proyecto.modelo.PpmMedidas;
 import ppm.contable.proyecto.modelo.PpmPeriodo;
 
 /**
@@ -16,44 +17,44 @@ import ppm.contable.proyecto.modelo.PpmPeriodo;
  * @author Pc
  */
 @Repository
-public class PeriodoDaoImplent implements PeriodoDao{
-   @Autowired    // sirve para no hacer una instancia, lo hace internamente
+public class MedidasDaoImplement implements MedidasDao{
+    @Autowired    // sirve para no hacer una instancia, lo hace internamente
     public SessionFactory sesionFactory;    // a travez de sessionFactory podemos conectarnos a la base de datos
     
     @Override
-    public List<PpmPeriodo> listaPeriodo(){
-        return sesionFactory.getCurrentSession().createCriteria(PpmPeriodo.class).list();
+    public List<PpmMedidas> listaMedidas(){
+        return sesionFactory.getCurrentSession().createCriteria(PpmMedidas.class).list();
     }
     
      @Override
-    public void insertarPeriodo(PpmPeriodo periodo ){
+    public void insertarMedidas(PpmMedidas medidas ){
                 
           Session session =sesionFactory.openSession();
           session.beginTransaction().begin();
           //  session.persist(periodo);
-            session.save(periodo);
+            session.save(medidas);
           session.beginTransaction().commit();          
     }
      @Override
-    public void eliminarPeriodo(String idPeriodo){
+    public void eliminarMedidas(String idPeriodo){
     sesionFactory.getCurrentSession()
-            .createQuery("delete PpmPeriodo per where per.idPeriodo=?")
+            .createQuery("delete PpmMedidas per where per.idMedidas=?")
             .setString(0, idPeriodo)            
             .executeUpdate();
     }
     
     @Override
-    public PpmPeriodo buscarIdPeriodo(String idPeriodo){
-    return (PpmPeriodo)sesionFactory.getCurrentSession().get(PpmPeriodo.class, idPeriodo);
+    public PpmMedidas buscarIdMedidas(String idMedidas){
+    return (PpmMedidas)sesionFactory.getCurrentSession().get(PpmMedidas.class, idMedidas);
     }
     
     @Override
-    public void actualizarPeriodo(PpmPeriodo periodo){
+    public void actualizarMedidas(PpmMedidas medidas){
     Session sesion=sesionFactory.openSession();
-     System.out.println("------------------>"+periodo.getAnioPronostico());
+     System.out.println("------------------>"+medidas.getNombreMedida());
         try {
                 sesion.beginTransaction().begin();
-                sesion.update(periodo);
+                sesion.update(medidas);
                 sesion.getTransaction().commit(); 
         } catch (Exception e) { System.out.println("------------------>"+e.getMessage());
         }

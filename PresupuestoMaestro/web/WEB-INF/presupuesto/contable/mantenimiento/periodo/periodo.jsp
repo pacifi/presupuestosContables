@@ -34,7 +34,7 @@
                     <tr>
                         <td><c:out value="${p.idPeriodo}"/></td>
                         <td><c:out value="${p.estado}"/></td>
-                        <td><c:out value="${p.añoPronostico}"/></td>
+                        <td><c:out value="${p.anioPronostico}"/></td>
                         
                     </tr>
                     </c:forEach>

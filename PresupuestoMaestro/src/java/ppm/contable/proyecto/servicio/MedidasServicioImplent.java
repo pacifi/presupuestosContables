@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import ppm.contable.proyecto.dao.MedidasDao;
 import ppm.contable.proyecto.dao.PeriodoDao;
+import ppm.contable.proyecto.modelo.PpmMedidas;
 import ppm.contable.proyecto.modelo.PpmPeriodo;
 
 /**
@@ -18,30 +20,30 @@ import ppm.contable.proyecto.modelo.PpmPeriodo;
  */
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class PeriodoServicioImplement implements PeriodoServicio{
- @Autowired  
-  public PeriodoDao periodoDao;
+public class MedidasServicioImplent implements MedidasServicio {
+   @Autowired  
+  public MedidasDao medidasDao;
   
   @Override
-  public List<PpmPeriodo> listaPeriodo(){
-  return periodoDao.listaPeriodo();
+  public List<PpmMedidas> listaMedidas(){
+  return medidasDao.listaMedidas();
   } 
    @Override
-   public void  insertarPeriodo(PpmPeriodo periodo){
-       periodoDao.insertarPeriodo(periodo);
+   public void insertarMedidas(PpmMedidas medidas){
+       medidasDao.insertarMedidas(medidas);
    }
      @Override
-    public void eliminarPeriodo(String idPeriodo){
-    periodoDao.eliminarPeriodo(idPeriodo);
+    public void eliminarMedidas(String idMedidas){
+    medidasDao.eliminarMedidas(idMedidas);
     }
     
     @Override
-    public PpmPeriodo buscarPeriodoId(String idPeriodo){
-    return periodoDao.buscarIdPeriodo(idPeriodo);
+    public PpmMedidas buscarMedidasId(String idMedidas){
+    return medidasDao.buscarIdMedidas(idMedidas);
     }
       
     @Override
-    public void actualizarPeriodo(PpmPeriodo periodo){
-    periodoDao.actualizarPeriodo(periodo);
-    }
+    public void actualisarMedidas(PpmMedidas medidas){
+    medidasDao.actualizarMedidas(medidas);
+    } 
 }

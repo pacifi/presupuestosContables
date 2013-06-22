@@ -1,6 +1,6 @@
 <%-- 
-    Document   : periodo
-    Created on : 21/06/2013, 09:41:19 AM
+    Document   : medidas
+    Created on : 21/06/2013, 09:13:01 PM
     Author     : Pc
 --%>
 
@@ -14,27 +14,27 @@
     </head>
     <body>
         
-        <c:if test="${!empty listPeriodo}"> 
+        <c:if test="${!empty listMedidas}"> 
            
             <table border="1">
                 <thead>
                     <tr>
-                        <th colspan="5"> Reporte Periodo</th>
+                        <th colspan="3"> Reporte medidas</th>
                         
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Id Periodo</td>
-                        <td>Estado</td>
-                        <td>AÑO DE PRONOSTICO</td>
+                        <td>Id MEDIDAS</td>
+                        <td>MEDIDAS</td>
+                        <td>SIMBOLOS</td>
                        
                     </tr>
-                    <c:forEach items="${listPeriodo}" var="p">
+                    <c:forEach items="${listMedidas}" var="m">
                     <tr>
-                        <td><c:out value="${p.idPeriodo}"/></td>
-                        <td><c:out value="${p.estado}"/></td>
-                        <td><c:out value="${p.añoPronostico}"/></td>
+                        <td><c:out value="${m.idMedidas}"/></td>
+                        <td><c:out value="${m.nombreMedida}"/></td>
+                        <td><c:out value="${m.abreviatura}"/></td>
                         
                     </tr>
                     </c:forEach>
@@ -46,4 +46,4 @@
          
          
     </body>
-</html>w
+</html>
