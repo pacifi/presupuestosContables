@@ -10,16 +10,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Reporte de Productos</title>
     </head>
     <body>
        
          <c:if test="${!empty listaProducto}">
              <table border="1">
                  
-                 <thead>
+                 <thead >
                      <tr>
-                         <th>Reporte de productos</th>
+                         <th colspan="7">Reporte de productos</th>
                      </tr>
                  </thead>
                  <tbody>
@@ -30,16 +30,22 @@
                          <td> % Inv Final</td>
                          <td>% Utilidad</td>
                          <td> proyecto</td>
+                         <td> Opciones</td>
                          
                      </tr>
                      <c:forEach items="${listaProducto}" var="p">
+                         
+                         <tr>
                          <td><c:out value="${p.idProducto}"/> </td>
                          <td><c:out value="${p.nombreProducto}"/> </td>
                          <td><c:out value="${p.descripcion}"/> </td>
                          <td><c:out value="${p.politicaInvfin}"/> </td>
                          <td><c:out value="${p.margenGanancia}"/> </td>
                          <td><c:out value="${p.idProyecto.nombrePresupuestos}"/> </td>
-                         
+                         <td> 
+                            <a href="eliminarProducto.dmp?idProductoP=${p.idProducto}">Eliminar</a> 
+                            <a href="editarProducto.dmp?idProductoP=${p.idProducto}">Editar</a> 
+                        </td></tr>
                      </c:forEach>
                         
                      

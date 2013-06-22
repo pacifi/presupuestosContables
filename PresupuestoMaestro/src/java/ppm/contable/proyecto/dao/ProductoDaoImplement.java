@@ -30,20 +30,21 @@ public class ProductoDaoImplement implements ProductoDao{
             lista= sessionFactory.getCurrentSession().createCriteria(PpmProducto.class).list();
         } catch (Exception e) {
             System.out.println("el error esta en la conlta"+e.getMessage());
-        }
+        }   
     return lista;
     }
     
     @Override
     public void insertaProducto( PpmProducto producto){
-        
-        try {
-            Session session= sessionFactory.openSession();
-            session.beginTransaction().begin();
+       try {
+                 Session session =sessionFactory.openSession();
+          session.beginTransaction().begin();
+          //  session.persist(periodo);
             session.save(producto);
-            session.beginTransaction().commit();
+          session.beginTransaction().commit();          
+    
         } catch (Exception e) {
-        System.out.println("error en el insert"+e.getMessage());
+        System.out.println("error en el insertar Producto"+e.getMessage());
         }
     
     }

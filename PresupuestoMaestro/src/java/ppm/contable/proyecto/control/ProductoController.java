@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -42,9 +43,24 @@ public class ProductoController {
 
     @RequestMapping(value = "productoGuardar", method = RequestMethod.POST)
     public ModelAndView guardarProducto(@ModelAttribute("ModeloProducto") PpmProducto producto, BindingResult result) {
+        System.out.println("este es el punto del control " + producto.getIdProyecto());
         servicio.insertaPeriodo(producto);
+
         return new ModelAndView("redirect:reporteProducto.pacifi");
-        
-       
     }
-}
+
+    @RequestMapping(value = "eliminarProducto", method = RequestMethod.GET)
+    public ModelAndView eliminarPeriodo(HttpServletRequest request) {
+        String idPeriodo = request.getParameter("idProductoP") == null ? "" : request.getParameter("idProductoP");
+        servicio.eliminarPeriodo(idPeriodo);
+        return new ModelAndView("redirect:reporte.dmp");
+    }
+    /*Editar Periodo*/
+    @RequestMapping(value="editarProducto", method= RequestMethod.GET)
+    public ModelAndView editarPeriodoForm(HttpServletRequest request){
+    String idPeriodo=request.getParameter("idProductoP")==null?"":request.getParameter("idProductoP");
+    PpmProducto producto=null;
+    producto=servicio.buscarPeriodoId(idPeriodo);    
+    return new ModelAndView("modulos/periodo/formEditPeriodo", "ActualizarModelo",producto);    
+    
+}}

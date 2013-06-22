@@ -14,7 +14,7 @@
         <a href="reporteProducto.pacifi">ir periodo</a>       
         <a href="formProducto.pacifi">ir periodo</a> 
         <a href="reporte.pacifi">REPORTE PERIODO</a>
-        <a href="formPeriodo.pacifi">INSERTA PERIODO</a><td>
+        <a href="formPeriodo.pacifi">INSERTA PERIODO</a>
         <a href="reporteMedidas.pacifi">REPORTE MEDIDAS</a>
         <a href="formMedidas.pacifi">ir inserta MEDIDAS</a>
         <a href="reporteCatalogoConsumo.pacifi">REPORTE CATALOGO CONSUMO</a>

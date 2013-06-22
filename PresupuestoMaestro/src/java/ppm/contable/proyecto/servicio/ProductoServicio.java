@@ -15,5 +15,11 @@ public interface ProductoServicio {
     
     public List<PpmProducto> listarProducto();
     public void insertaPeriodo(PpmProducto producto);
+
+    public void eliminarPeriodo(String idPeriodo);
+
+    public PpmProducto buscarPeriodoId(String idPeriodo);
+
+ 
     
 }

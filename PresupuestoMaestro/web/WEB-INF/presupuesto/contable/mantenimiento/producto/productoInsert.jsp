@@ -15,22 +15,39 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <c:url value="productoGuardar.pacifi" var="productoG"/>
-        <fm:form modelAttribute="ModeloProducto" method="post" action="${productoG}">
-            <fm:label path="nombreProducto">nombre Producto</fm:label>
-            <fm:input path="nombreProducto"/><br>
-            <fm:label path="descripcion">descripcion</fm:label>
-            <fm:input path="descripcion"/><br>
-            <fm:label path="politicaInvfin">politicaInvfin</fm:label>
-            <fm:input path="politicaInvfin"/><br>
-            <fm:label path="margenGanancia">margenGanancia</fm:label>
-            <fm:input path="margenGanancia"/><br>
-            <fm:label path="idProyecto">idProyecto</fm:label>
-            <fm:input path="idProyecto"/><br>
+        <table border="1">
+              <c:url value="productoGuardar.pacifi" var="productoG"/>
+               <fm:form modelAttribute="ModeloProducto" method="post" action="${productoG}">
+         
+            <tbody>
+                <tr>
+                    <td><fm:label path="nombreProducto">nombre Producto</fm:label></td>
+                    <td><fm:input path="nombreProducto"/></td>
+                </tr>
+                <tr>
+                    <td><fm:label path="descripcion"> descripcion del producto</fm:label></td>
+                    <td><fm:input path="descripcion"/></td>
+                </tr>
+                <tr>
+                    <td><fm:label path="politicaInvfin">% para los inventarios finales</fm:label></td>
+                    <td><fm:input path="politicaInvfin"/></td>
+                </tr>
+                <tr>
+                    <td><fm:label path="margenGanancia">% para el margen de ganancia</fm:label></td>
+                    <td><fm:input path="margenGanancia"/></td>
+                </tr>
+                <tr>
+                    <td><fm:label path="idProyecto.idProyecto">ingrese condigode su</fm:label></td>
+                    <td><fm:input path="idProyecto.idProyecto"/></td>
+                </tr>
+                 <tr>
+                        <td>Imprimir</td>
+                        <td> <input type="submit"  value="Registrar" name="registrar"/>
+                           </td>
+                    </tr>
+               </tbody>
             
-            
-                      
-           <input type="submit" value="Enviar"/>
-        </fm:form>
+        </table>}          </fm:form>  
+
     </body>
 </html>
