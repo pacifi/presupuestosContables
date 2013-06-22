@@ -42,34 +42,33 @@ public class ProductoController {
 
     @RequestMapping(value = "productoGuardar", method = RequestMethod.POST)
     public ModelAndView guardarProducto(@ModelAttribute("ModeloProducto") PpmProducto producto, BindingResult result) {
-        System.out.println("este es el punto del control " + producto.getIdProyecto());
         servicio.insertaPeriodo(producto);
-
         return new ModelAndView("redirect:reporteProducto.pacifi");
     }
 
     @RequestMapping(value = "eliminarProducto", method = RequestMethod.GET)
     public ModelAndView eliminarProducto(HttpServletRequest request) {
-        String idPeriodo = request.getParameter("idProductoP") == null ? "" : request.getParameter("idProductoP");
-        servicio.eliminarProducto(idPeriodo);
+        int idProducto = Integer.parseInt(request.getParameter("idProductoP") == null ? "" : request.getParameter("idProductoP"));
+        servicio.eliminarProducto(idProducto);
         return new ModelAndView("redirect:reporteProducto.pacifi");
     }
     /*Editar Periodo*/
 
     @RequestMapping(value = "editarProductoForm", method = RequestMethod.GET)
-    public ModelAndView editarPeriodoForm(HttpServletRequest request) {
-        String idProducto = request.getParameter("idProductoP") == null ? "" : request.getParameter("idProductoP");
+    public ModelAndView formEditProducto(HttpServletRequest request) {
+
+        int idProducto = Integer.parseInt(request.getParameter("idProductoP") == null ? "" : request.getParameter("idProductoP"));
+
         PpmProducto producto = null;
         producto = servicio.buscarProductoId(idProducto);
-        System.out.println("aca los datos del jsp "+producto.getNombreProducto());
-        System.out.println("aca los datos del jsp "+producto.getDescripcion());
-        System.out.println("aca los datos del jsp "+producto.getIdProducto());
-        System.out.println("aca los datos del jsp "+producto.getMargenGanancia());
-        return new ModelAndView("contable/mantenimiento/producto/productoActualizar", "ActualizarModelo", producto);
+
+        return new ModelAndView("contable/mantenimiento/producto/productoEdit", "ActualizarModelo", producto);
     }
 
-    @RequestMapping(value = "actualizarProducto", method = RequestMethod.POST)
-    public ModelAndView actualizarPeriodo(@ModelAttribute("ActualizarModelo") PpmProducto producto, BindingResult result) {
+    @RequestMapping(value = "productoActualizar", method = RequestMethod.POST)
+    public ModelAndView actualizarProducto(@ModelAttribute("ActualizarModelo") PpmProducto producto, BindingResult result) {
+
+
         servicio.actualizarProducto(producto);
         return new ModelAndView("redirect:reporteProducto.pacifi");
     }

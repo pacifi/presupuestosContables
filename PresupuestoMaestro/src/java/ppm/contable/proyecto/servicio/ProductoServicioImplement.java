@@ -36,12 +36,12 @@ public class ProductoServicioImplement implements ProductoServicio {
     }
 
     @Override
-    public void eliminarProducto(String idProducto) {
+    public void eliminarProducto(int idProducto) {
         dao.eliminarProducto(idProducto);
     }
 
     @Override
-    public PpmProducto buscarProductoId(String idProducto) {
+    public PpmProducto buscarProductoId(int idProducto) {
         return dao.buscarProductoId(idProducto);
     }
 

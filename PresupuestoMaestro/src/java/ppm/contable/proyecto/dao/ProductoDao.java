@@ -15,9 +15,9 @@ public interface ProductoDao {
      List<PpmProducto> listarProducto();
      public void insertaProducto( PpmProducto producto);
 
-    public void eliminarProducto(String idProducto);
+    public void eliminarProducto(int idProducto);
 
-    public PpmProducto buscarProductoId(String idProducto);
+    public PpmProducto buscarProductoId(int idProducto);
 
     public void actualizarProducto(PpmProducto producto);
 }

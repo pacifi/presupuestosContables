@@ -52,15 +52,15 @@ public class ProductoDaoImplement implements ProductoDao {
     }
 
     @Override
-    public void eliminarProducto(String idProducto) {
+    public void eliminarProducto(int idProducto) {
         sessionFactory.getCurrentSession()
                 .createQuery("delete PpmProducto pro where pro.idProducto=?")
-                .setString(0, idProducto)
+                .setInteger(0, idProducto)
                 .executeUpdate();
     }
 
     @Override
-    public PpmProducto buscarProductoId(String idProducto) {
+    public PpmProducto buscarProductoId(int idProducto) {
         PpmProducto productoR = null;
         try {
             productoR = (PpmProducto) sessionFactory.getCurrentSession().get(PpmProducto.class, idProducto);
