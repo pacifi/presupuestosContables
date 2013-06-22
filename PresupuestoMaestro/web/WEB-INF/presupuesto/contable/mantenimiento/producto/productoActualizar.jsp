@@ -35,7 +35,7 @@
                         <td><fm:label path="politicaInvfin">% para los inventarios finales</fm:label></td>
                         <td><fm:input path="politicaInvfin"/></td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td><fm:label path="margenGanancia">% para el margen de ganancia</fm:label></td>
                         <td><fm:input path="margenGanancia"/></td>
                     </tr>
