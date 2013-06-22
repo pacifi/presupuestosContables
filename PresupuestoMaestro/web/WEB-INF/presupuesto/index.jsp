@@ -8,16 +8,15 @@
         <title>Welcome to Spring Web MVC project</title>
     </head>
 
-    <body>
-
-               
-        <a href="reporteProducto.pacifi">ir periodo</a>       
-        <a href="formProducto.pacifi">ir periodo</a> 
-        <a href="reporte.pacifi">REPORTE PERIODO</a>
-        <a href="formPeriodo.pacifi">INSERTA PERIODO</a>
-        <a href="reporteMedidas.pacifi">REPORTE MEDIDAS</a>
-        <a href="formMedidas.pacifi">ir inserta MEDIDAS</a>
-        <a href="reporteCatalogoConsumo.pacifi">REPORTE CATALOGO CONSUMO</a>
-        <a href="formCatalogoConsumo.pacifi">ir inserta CONSUMO</a>
+    <body>     
+        <a href="reporteProducto.pacifi">ir Producto</a><br>
+        <a href="formProducto.pacifi">ir isertaproducto</a> <br>
+  
+        <a href="reporte.pacifi">REPORTE PERIODO</a><br>
+        <a href="formPeriodo.pacifi">INSERTA PERIODO</a><br>
+        <a href="reporteMedidas.pacifi">REPORTE MEDIDAS</a><br>
+        <a href="formMedidas.pacifi">ir inserta MEDIDAS</a><br>
+        <a href="reporteCatalogoConsumo.pacifi">REPORTE CATALOGO CONSUMO</a><br>
+        <a href="formCatalogoConsumo.pacifi">ir inserta CONSUMO</a><br>
     </body>
 </html>

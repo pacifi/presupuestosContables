@@ -11,28 +11,43 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import ppm.contable.proyecto.dao.ProductoDao;
 import ppm.contable.proyecto.modelo.PpmProducto;
+
 /**
  *
  * @author Pacifi
  */
 @Service
-@Transactional(propagation= Propagation.SUPPORTS,readOnly = true)
-public class ProductoServicioImplement implements ProductoServicio{
+@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+public class ProductoServicioImplement implements ProductoServicio {
 
     @Autowired
     public ProductoDao dao;
-    
+
     @Override
-     public List<PpmProducto> listarProducto(){
-     
-         return dao.listarProducto();
-         
-     }
-    
-    public void insertaPeriodo(PpmProducto producto){
+    public List<PpmProducto> listarProducto() {
+
+        return dao.listarProducto();
+
+    }
+
+    @Override
+    public void insertaPeriodo(PpmProducto producto) {
         dao.insertaProducto(producto);
     }
- 
-    
-    
+
+    @Override
+    public void eliminarProducto(String idProducto) {
+        dao.eliminarProducto(idProducto);
+    }
+
+    @Override
+    public PpmProducto buscarProductoId(String idProducto) {
+        return dao.buscarProductoId(idProducto);
+    }
+
+    @Override
+    public void actualizarProducto(PpmProducto producto) {
+        dao.actualizarProducto(producto);
+        
+    }
 }
