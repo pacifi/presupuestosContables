@@ -67,8 +67,6 @@ public class ProductoController {
 
     @RequestMapping(value = "productoActualizar", method = RequestMethod.POST)
     public ModelAndView actualizarProducto(@ModelAttribute("ActualizarModelo") PpmProducto producto, BindingResult result) {
-
-
         servicio.actualizarProducto(producto);
         return new ModelAndView("redirect:reporteProducto.pacifi");
     }
