@@ -16,7 +16,7 @@
     <body>
         <h1>Hello World!</h1>
         <table border="1">
-            <c:url value="actualizaProducto.pacifi" var="productoG"/>
+            <c:url value="productoGuardar.pacifi" var="productoG"/>
             <fm:form modelAttribute="ModeloProducto" method="post" action="${productoG}">
 
                 <tbody>
