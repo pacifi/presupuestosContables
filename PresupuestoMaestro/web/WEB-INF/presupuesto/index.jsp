@@ -17,5 +17,6 @@
         <a href="reporteProductoConsumo.pacifi">REPORTE  CONSUMO</a><br>
         <a href="reporteCatalogoCiv.pacifi">ir reporte catalogo civ</a><br>
         <a href="reporteCatalogoCif.pacifi"> catalogo cif</a><br>
+        <a href="reporteProductoCiv.pacifi"> catalogo productoCiv</a><br>
     </body>
 </html>
