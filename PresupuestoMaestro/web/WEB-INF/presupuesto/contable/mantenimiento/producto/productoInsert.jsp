@@ -21,7 +21,7 @@
 
                 <tbody>
                     <tr>
-                        <td><fm:label path="nombreProducto">nombre Producto</fm:label></td>
+                        <td><fm:label path="nombreProducto">nombreProducto</fm:label></td>
                         <td><fm:input path="nombreProducto"/></td>
                     </tr>
                     <tr>

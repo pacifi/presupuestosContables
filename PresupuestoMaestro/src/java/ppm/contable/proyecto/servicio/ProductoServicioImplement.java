@@ -48,6 +48,5 @@ public class ProductoServicioImplement implements ProductoServicio {
     @Override
     public void actualizarProducto(PpmProducto producto) {
         dao.actualizarProducto(producto);
-        
     }
 }

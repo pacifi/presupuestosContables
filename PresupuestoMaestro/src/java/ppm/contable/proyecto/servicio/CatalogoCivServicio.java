@@ -12,5 +12,13 @@ import ppm.contable.proyecto.modelo.PpmCatalogoCiv;
  * @author Pacifi
  */
 public interface CatalogoCivServicio {
+
     public List<PpmCatalogoCiv> listaCatalogoCiv();
+
+    public void eliminarCatalogoCiv(int id);
+    public void insertaCatalogoCiv(PpmCatalogoCiv catalogoCiv);
+
+    public PpmCatalogoCiv buscarCatalogoCivId(int id);
+
+    public void actualizaCatalogoCiv(PpmCatalogoCiv catalogoCiv);
 }

@@ -16,19 +16,35 @@ import ppm.contable.proyecto.modelo.PpmCatalogoCiv;
  *
  * @author Pacifi
  */
-
 @Service
-@Transactional (propagation = Propagation.SUPPORTS,readOnly = true)
-public class CatalogoCivServicioImplement implements CatalogoCivServicio{
-   
+@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+public class CatalogoCivServicioImplement implements CatalogoCivServicio {
+
     @Autowired
     public CatalogoCivDao dao;
-    
+
     @Override
-    public List<PpmCatalogoCiv> listaCatalogoCiv(){
-    return  dao.listaCatalogoCiv();
+    public List<PpmCatalogoCiv> listaCatalogoCiv() {
+        return dao.listaCatalogoCiv();
     }
     
-            
-    
+    @Override
+    public void insertaCatalogoCiv(PpmCatalogoCiv catalogoCiv){
+    dao.insertaCatalogoCiv(catalogoCiv);
+    }
+
+    @Override
+    public void eliminarCatalogoCiv(int id) {
+        dao.eliminaCatalogoCiv(id);
+    }
+
+    @Override
+    public PpmCatalogoCiv buscarCatalogoCivId(int id) {
+        return dao.buscaCatalogoCivId(id);
+    }
+
+    @Override
+    public void actualizaCatalogoCiv(PpmCatalogoCiv catalogoCiv) {
+        dao.actualizarCatalogoCiv(catalogoCiv);
+    }
 }

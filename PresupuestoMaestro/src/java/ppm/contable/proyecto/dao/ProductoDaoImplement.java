@@ -25,8 +25,6 @@ public class ProductoDaoImplement implements ProductoDao {
 
     @Override
     public List<PpmProducto> listarProducto() {
-
-
         List<PpmProducto> lista = new ArrayList<PpmProducto>();
         try {
             lista = sessionFactory.getCurrentSession().createCriteria(PpmProducto.class).list();
@@ -53,10 +51,13 @@ public class ProductoDaoImplement implements ProductoDao {
 
     @Override
     public void eliminarProducto(int idProducto) {
-        sessionFactory.getCurrentSession()
+        try {
+            sessionFactory.getCurrentSession()
                 .createQuery("delete PpmProducto pro where pro.idProducto=?")
                 .setInteger(0, idProducto)
                 .executeUpdate();
+        } catch (Exception e) {
+        }
     }
 
     @Override

@@ -18,5 +18,6 @@
         <a href="formMedidas.pacifi">ir inserta MEDIDAS</a><br>
         <a href="reporteCatalogoConsumo.pacifi">REPORTE CATALOGO CONSUMO</a><br>
         <a href="formCatalogoConsumo.pacifi">ir inserta CONSUMO</a><br>
+        <a href="reporteCatalogoCiv.pacifi">ir reporte catalogo civ</a><br>
     </body>
 </html>
