@@ -47,7 +47,7 @@ public class PeriodoController {
     @RequestMapping(value="periodoGuardar", method= RequestMethod.POST)
    public ModelAndView guardarPeriodo(@ModelAttribute("ModeloPeriodo") PpmPeriodo periodo, BindingResult result) {  
        periodoServicio.insertarPeriodo(periodo);
-   return new ModelAndView("index");
+   return new ModelAndView("redirect:reporte.pacifi");
    }
     @RequestMapping(value="formPeriodo", method= RequestMethod.GET)
    public ModelAndView irFormulario(@ModelAttribute("ModeloPeriodo") PpmPeriodo periodo, BindingResult result){   

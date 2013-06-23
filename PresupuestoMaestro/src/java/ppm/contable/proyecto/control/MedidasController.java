@@ -48,7 +48,7 @@ public class MedidasController {
     @RequestMapping(value="medidasGuardar", method= RequestMethod.POST)
    public ModelAndView guardarMedidas(@ModelAttribute("ModeloMedidas") PpmMedidas medidas, BindingResult result) {  
        medidasServicio.insertarMedidas(medidas);
-   return new ModelAndView("index");
+   return new ModelAndView("redirect:reporteMedidas.pacifi");
    }
     @RequestMapping(value="formMedidas", method= RequestMethod.GET)
    public ModelAndView irFormulario(@ModelAttribute("ModeloMedidas") PpmMedidas medidas, BindingResult result){   

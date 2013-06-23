@@ -23,7 +23,7 @@
                 
                 <thead>
                     <tr>
-                        <th colspan="3"> REPORTE CATALOGO CONSUMO</th>
+                        <th colspan="7"> REPORTE CATALOGO CONSUMO  <a href="formCatalogoConsumo.pacifi">INSERTA CATALOGO CONSUMO</a></th>
                         
                     </tr>
                 </thead>
@@ -36,7 +36,7 @@
                         <td>TIPO CONSUMO</td>
                         <td>CODIGO</td>
                         <td> MEDIDA</td>
-                        <td><a href="formCatalogoConsumo.pacifi">INSERTA CATALOGO CONSUMO</a></td>
+                       
                     </tr>
                     <c:forEach items="${listCatalogoConsumo}" var="m">
                     <tr>

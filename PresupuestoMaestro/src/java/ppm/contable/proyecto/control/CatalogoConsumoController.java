@@ -48,7 +48,7 @@ public class CatalogoConsumoController {
     @RequestMapping(value="catalogoConsumoGuardar", method= RequestMethod.POST)
    public ModelAndView guardarCatalogoConsumo(@ModelAttribute("ModeloCatalogoConsumo") PpmCatalogoConsumo consumo, BindingResult result) {  
        catalogoConsumoServicio.insertarCatalogoConsumo(consumo);
-   return new ModelAndView("index");
+   return new ModelAndView("redirect:reporteCatalogoConsumo.pacifi");
    }
     @RequestMapping(value="formCatalogoConsumo", method= RequestMethod.GET)
    public ModelAndView irFormulario(@ModelAttribute("ModeloCatalogoConsumo") PpmCatalogoConsumo consumo, BindingResult result){   
