@@ -1,6 +1,6 @@
 <%-- 
-    Document   : MedidasInsert
-    Created on : 21/06/2013, 09:29:04 PM
+    Document   : periodoEdit
+    Created on : 22/06/2013, 11:23:58 PM
     Author     : Pc
 --%>
 
@@ -18,27 +18,30 @@
     <body >        
     
         <div id="cuadroReporteR" style="width: 30%">
-                        <h3>Formulario medidas</h3>
+                        <h3>Formulario periodo edit</h3>
                         <div>
-        <c:url var="medidasy" value="medidasGuardar.pacifi" />        
-        <fm:form modelAttribute="ModeloMedidas" method="post" action="${medidasy}">
-            <tbody>
-         <tr><td><fm:label path="nombreMedida">MEDIDAS</fm:label></td>
-           <td> <fm:input path="nombreMedida"/><br></td>
+        <c:url var="productoy" value="actualizarPeriodo.pacifi" />        
+        <fm:form modelAttribute="ActualizarModelo" method="post" action="${productoy}">
+            <fm:hidden path="idPeriodo" /><br>
+         <tbody> 
+             <tr>
+            <td><fm:label path="estado"> ESTADO PERIODO</fm:label></td>
+            <td><fm:input path="estado"/><br></td>
             </tr>
-            <tr><td><fm:label path="abreviatura">SIMBOLO</fm:label></td>
-            <td><fm:input path="abreviatura"/><br></td>
+            <tr>
+            <td><fm:label path="anioPronostico">AÑO PRONOSTICO</fm:label></td>
+            <td><fm:input path="anioPronostico"/><br></td>
             </tr>
-            <tr> <td><input type="submit" value="Enviar"/>
+            <tr>
+            <td><input type="submit" value="Enviar"/>
             </td>
             </tr>
             </tbody>
         </fm:form>
                      
-
+ </table>
             </div>             
             </div>
-        </table>
     </body>
 </html>
 

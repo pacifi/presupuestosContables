@@ -42,7 +42,7 @@ public class CatalogoConsumoController {
 //      for (SauPeriodo to: lista){
 //      log.info("------------------->" + to.getPeriodo());
 //      }
-    return new ModelAndView("contable/mantenimiento/consumo/consumo", modelo);
+    return new ModelAndView("contable/mantenimiento/consumo/catalogoConsumo", modelo);
     }
     
     @RequestMapping(value="catalogoConsumoGuardar", method= RequestMethod.POST)
@@ -52,7 +52,7 @@ public class CatalogoConsumoController {
    }
     @RequestMapping(value="formCatalogoConsumo", method= RequestMethod.GET)
    public ModelAndView irFormulario(@ModelAttribute("ModeloCatalogoConsumo") PpmCatalogoConsumo consumo, BindingResult result){   
-       return new ModelAndView("contable/mantenimiento/consumo/ConsumoInsert");
+       return new ModelAndView("contable/mantenimiento/consumo/catalogoConsumoInsert");
    }
     
     /////////
@@ -69,7 +69,7 @@ public class CatalogoConsumoController {
     int idConsumo=Integer.parseInt(request.getParameter("idConsumoP")==null?"":request.getParameter("idConsumoP"));
     PpmCatalogoConsumo consumoTO=null;
     consumoTO=catalogoConsumoServicio.buscarCatalogoConsumoId(idConsumo);    
-    return new ModelAndView("contable/mantenimiento/consumo/formEditConsumo", "ActualizarCatalogoConsumo",consumoTO);    
+    return new ModelAndView("contable/mantenimiento/consumo/catalogoConsumoEdit", "ActualizarCatalogoConsumo",consumoTO);    
     }
     
     @RequestMapping(value="actualizarCatalogoConsumo", method= RequestMethod.POST)

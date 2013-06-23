@@ -36,15 +36,15 @@ public class MedidasDaoImplement implements MedidasDao{
           session.beginTransaction().commit();          
     }
      @Override
-    public void eliminarMedidas(String idPeriodo){
+    public void eliminarMedidas(int idPeriodo){
     sesionFactory.getCurrentSession()
             .createQuery("delete PpmMedidas per where per.idMedidas=?")
-            .setString(0, idPeriodo)            
+            .setInteger(0, idPeriodo)            
             .executeUpdate();
     }
     
     @Override
-    public PpmMedidas buscarIdMedidas(String idMedidas){
+    public PpmMedidas buscarIdMedidas(int idMedidas){
     return (PpmMedidas)sesionFactory.getCurrentSession().get(PpmMedidas.class, idMedidas);
     }
     

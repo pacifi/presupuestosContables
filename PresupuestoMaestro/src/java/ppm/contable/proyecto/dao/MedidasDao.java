@@ -15,7 +15,7 @@ import ppm.contable.proyecto.modelo.PpmPeriodo;
 public interface MedidasDao {
     public List<PpmMedidas> listaMedidas();
     public void insertarMedidas(PpmMedidas medidas );
-    public void eliminarMedidas(String idPeriodo);
-   public PpmMedidas buscarIdMedidas(String idMedidas);
+    public void eliminarMedidas(int idPeriodo);
+   public PpmMedidas buscarIdMedidas(int idMedidas);
     public void actualizarMedidas(PpmMedidas medidas);
 }

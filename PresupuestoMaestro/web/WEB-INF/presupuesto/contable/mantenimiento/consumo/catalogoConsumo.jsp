@@ -13,13 +13,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>titulos</h1>
+        <h1>Reporte catalogo consumo</h1>
         
-        <a href="formCatalogoConsumo.pacifi">ir inserta CONSUMO</a><br>
+      
 
         <c:if test="${!empty listCatalogoConsumo}"> 
            
             <table border="1">
+                
                 <thead>
                     <tr>
                         <th colspan="3"> REPORTE CATALOGO CONSUMO</th>
@@ -35,6 +36,7 @@
                         <td>TIPO CONSUMO</td>
                         <td>CODIGO</td>
                         <td> MEDIDA</td>
+                        <td><a href="formCatalogoConsumo.pacifi">INSERTA CATALOGO CONSUMO</a></td>
                     </tr>
                     <c:forEach items="${listCatalogoConsumo}" var="m">
                     <tr>
@@ -46,8 +48,8 @@
                         <td><c:out value="${m.codigo}"/></td>
                         <td><c:out value="${m.idMedidas.nombreMedida}"/></td>
                      <td> 
-                            <a href="eliminarCatalogoConsumo.idCatalogoConsumoP=${m.idConsumo}">Eliminar</a> 
-                            <a href="editarProductoConsumo.pacifi?idProductoConsumoP=${m.idConsumo}">Editar</a> 
+                            <a href="eliminarCatalogoConsumo.pacifi?idCatalogoConsumoP=${m.idConsumo}">Eliminar</a> 
+                            <a href="editarCatalogoConsumo.pacifi?idConsumoP=${m.idConsumo}">Editar</a> 
                         </td>   
                     </tr>
                     </c:forEach>

@@ -14,8 +14,8 @@ import ppm.contable.proyecto.modelo.PpmMedidas;
 public interface MedidasServicio {
     public List<PpmMedidas> listaMedidas();
     public void  insertarMedidas(PpmMedidas medidas);
-    public void eliminarMedidas(String idMedidas);
-    public PpmMedidas buscarMedidasId(String idMedidas);
+    public void eliminarMedidas(int idMedidas);
+    public PpmMedidas buscarMedidasId(int idMedidas);
     public void actualisarMedidas(PpmMedidas medidas);
     
 }

@@ -35,15 +35,15 @@ public class PeriodoDaoImplent implements PeriodoDao{
           session.beginTransaction().commit();          
     }
      @Override
-    public void eliminarPeriodo(String idPeriodo){
+    public void eliminarPeriodo(int idPeriodo){
     sesionFactory.getCurrentSession()
             .createQuery("delete PpmPeriodo per where per.idPeriodo=?")
-            .setString(0, idPeriodo)            
+            .setInteger(0, idPeriodo)            
             .executeUpdate();
     }
     
     @Override
-    public PpmPeriodo buscarIdPeriodo(String idPeriodo){
+    public PpmPeriodo buscarIdPeriodo(int idPeriodo){
     return (PpmPeriodo)sesionFactory.getCurrentSession().get(PpmPeriodo.class, idPeriodo);
     }
     

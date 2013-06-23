@@ -17,9 +17,10 @@
 
 
         <table border="1">
+            <h1>Reporte producto consumo</h1>
             <thead>
                 <tr>
-                    <th colspan="3"> REPORTE PRODUCTO CONSUMO   <a href="formProductoConsumo.pacifi">insertar</a> 
+                    <th colspan="3"> REPORTE PRODUCTO CONSUMO    
                              </th>
 
                 </tr>
@@ -31,7 +32,7 @@
                     <td>PRECIO UNITARIO</td>
                     <td>MEDIDA BACE</td>
                     <td>TIPO CONSUMO</td>
-
+                    <td><a href="formProductoConsumo.pacifi">INSERTA PRODUCTO CONSUMO</a></td>
                 </tr>
                 <c:if test="${!empty listProductoConsumo}"> 
                     <c:forEach items="${listProductoConsumo}" var="m">

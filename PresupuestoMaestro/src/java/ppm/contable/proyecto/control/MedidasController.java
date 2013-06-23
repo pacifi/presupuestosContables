@@ -55,24 +55,24 @@ public class MedidasController {
        return new ModelAndView("contable/mantenimiento/medidas/MedidasInsert");
    }
     
-    /*@RequestMapping(value="eliminarMedidas", method= RequestMethod.GET)
+    @RequestMapping(value="eliminarMedidas", method= RequestMethod.GET)
    public ModelAndView eliminarMedidas(HttpServletRequest request){
-       String idMedidas =request.getParameter("idMedidasP")==null?"":request.getParameter("idMedidasP");
+       int idMedidas =Integer.parseInt(request.getParameter("idMedidasP")==null?"":request.getParameter("idMedidasP"));
        medidasServicio.eliminarMedidas(idMedidas);
-   return new ModelAndView("redirect:reporteMedidas.Pacifi");
+   return new ModelAndView("redirect:reporteMedidas.pacifi");
    }
     //*Editar Periodo
-    @RequestMapping(value="editarPeriodo", method= RequestMethod.GET)
+    @RequestMapping(value="editarMedidas", method= RequestMethod.GET)
     public ModelAndView editarMedidaForm(HttpServletRequest request){
-    String idMedida=request.getParameter("idMedidasP")==null?"":request.getParameter("idMedidasP");
+    int idMedida=Integer.parseInt(request.getParameter("idMedidasP")==null?"":request.getParameter("idMedidasP"));
     PpmMedidas medidasTO=null;
     medidasTO=medidasServicio.buscarMedidasId(idMedida);    
-    return new ModelAndView("modulos/periodo/formEditMedidas", "ActualizarModelo",medidasTO);    
+    return new ModelAndView("contable/mantenimiento/medidas/medidasEdit", "ActualizarModelo",medidasTO);    
     }
     
     @RequestMapping(value="actualizarMedidas", method= RequestMethod.POST)
     public ModelAndView actualizarMedidas(@ModelAttribute("ActualizarModelo") PpmMedidas  medidas, BindingResult result){
     medidasServicio.actualisarMedidas(medidas);
-    return new ModelAndView("redirect:reporte.facifi");
-    }*/
+    return new ModelAndView("redirect:reporteMedidas.pacifi");
+    }
 }

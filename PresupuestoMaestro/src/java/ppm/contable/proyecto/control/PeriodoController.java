@@ -7,6 +7,7 @@ package ppm.contable.proyecto.control;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,25 +54,25 @@ public class PeriodoController {
        return new ModelAndView("contable/mantenimiento/periodo/PeriodoInsert");
    }
     
-   /* @RequestMapping(value="eliminarPer", method= RequestMethod.GET)
+    @RequestMapping(value="eliminarPer", method= RequestMethod.GET)
    public ModelAndView eliminarPeriodo(HttpServletRequest request){
-       String idPeriodo =request.getParameter("idPeriodoP")==null?"":request.getParameter("idPeriodoP");
+       int idPeriodo =Integer.parseInt(request.getParameter("idPeriodoP")==null?"":request.getParameter("idPeriodoP"));
        periodoServicio.eliminarPeriodo(idPeriodo);
-   return new ModelAndView("redirect:reporte.Pacifi");
+   return new ModelAndView("redirect:reporte.pacifi");
    }
     //Editar Periodo
     @RequestMapping(value="editarPeriodo", method= RequestMethod.GET)
     public ModelAndView editarPeriodoForm(HttpServletRequest request){
-    String idPeriodo=request.getParameter("idPeriodoP")==null?"":request.getParameter("idPeriodoP");
+    int idPeriodo=Integer.parseInt(request.getParameter("idPeriodoP")==null?"":request.getParameter("idPeriodoP"));
     PpmPeriodo periodoTO=null;
     periodoTO=periodoServicio.buscarPeriodoId(idPeriodo);    
-    return new ModelAndView("modulos/periodo/formEditPeriodo", "ActualizarModelo",periodoTO);    
+    return new ModelAndView("contable/mantenimiento/periodo/periodoEdit", "ActualizarModelo",periodoTO);    
     }
     
     @RequestMapping(value="actualizarPeriodo", method= RequestMethod.POST)
     public ModelAndView actualizarPeriodo(@ModelAttribute("ActualizarModelo") PpmPeriodo  periodo, BindingResult result){
     periodoServicio.actualizarPeriodo(periodo);
-    return new ModelAndView("redirect:reporte.facifi");
+    return new ModelAndView("redirect:reporte.pacifi");
     }
-    */
+    
 }

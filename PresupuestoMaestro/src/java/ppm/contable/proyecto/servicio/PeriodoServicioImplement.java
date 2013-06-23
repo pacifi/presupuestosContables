@@ -31,12 +31,12 @@ public class PeriodoServicioImplement implements PeriodoServicio{
        periodoDao.insertarPeriodo(periodo);
    }
      @Override
-    public void eliminarPeriodo(String idPeriodo){
+    public void eliminarPeriodo(int idPeriodo){
     periodoDao.eliminarPeriodo(idPeriodo);
     }
     
     @Override
-    public PpmPeriodo buscarPeriodoId(String idPeriodo){
+    public PpmPeriodo buscarPeriodoId(int idPeriodo){
     return periodoDao.buscarIdPeriodo(idPeriodo);
     }
       

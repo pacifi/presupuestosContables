@@ -18,7 +18,7 @@
     <body >        
     
         <div id="cuadroReporteR" style="width: 30%">
-                        <h3>Formulario consumo</h3>
+                        <h3>Formulario periodo</h3>
                         <div>
         <c:url var="productoy" value="periodoGuardar.pacifi" />        
         <fm:form modelAttribute="ModeloPeriodo" method="post" action="${productoy}">

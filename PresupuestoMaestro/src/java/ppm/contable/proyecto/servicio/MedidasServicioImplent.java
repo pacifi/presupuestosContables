@@ -33,12 +33,12 @@ public class MedidasServicioImplent implements MedidasServicio {
        medidasDao.insertarMedidas(medidas);
    }
      @Override
-    public void eliminarMedidas(String idMedidas){
+    public void eliminarMedidas(int idMedidas){
     medidasDao.eliminarMedidas(idMedidas);
     }
     
     @Override
-    public PpmMedidas buscarMedidasId(String idMedidas){
+    public PpmMedidas buscarMedidasId(int idMedidas){
     return medidasDao.buscarIdMedidas(idMedidas);
     }
       

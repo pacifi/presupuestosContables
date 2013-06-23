@@ -18,7 +18,7 @@
     <body >        
     
         <div id="cuadroReporteR" style="width: 30%">
-                        <h3>Formulario PRODUCTO CONSUMO</h3>
+                        <h3>Formulario PRODUCTO CONSUMO EDIT</h3>
                         
         <c:url var="productoConsumoActualizary" value="actualizarProductoConsumo.pacifi" />        
         <fm:form modelAttribute="ActualizarProductoConsumo" method="post" action="${productoConsumoActualizary}">

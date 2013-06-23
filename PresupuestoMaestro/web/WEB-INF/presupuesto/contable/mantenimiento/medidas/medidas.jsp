@@ -15,11 +15,11 @@
     <body>
         
         <c:if test="${!empty listMedidas}"> 
-           
+           <h1>Reporte medidas</h1>
             <table border="1">
                 <thead>
                     <tr>
-                        <th colspan="3"> Reporte medidas</th>
+                        <th colspan="3"> 
                         
                     </tr>
                 </thead>
@@ -28,7 +28,7 @@
                         <td>Id MEDIDAS</td>
                         <td>MEDIDAS</td>
                         <td>SIMBOLOS</td>
-                       
+                        <td><a href="formMedidas.pacifi">INSERTA MEDIDAS</a></td>
                     </tr>
                     <c:forEach items="${listMedidas}" var="m">
                     <tr>
@@ -36,8 +36,8 @@
                         <td><c:out value="${m.nombreMedida}"/></td>
                         <td><c:out value="${m.abreviatura}"/></td>
                         <td> 
-                            <a href="eliminarProducto.pacifi?idProductoP=${p.idProducto}">Eliminar</a> 
-                            <a href="editarProductoForm.pacifi?idProductoP=${p.idProducto}">Editar</a> 
+                            <a href="eliminarMedidas.pacifi?idMedidasP=${m.idMedidas}">Eliminar</a> 
+                            <a href="editarMedidas.pacifi?idMedidasP=${m.idMedidas}">Editar</a> 
                         </td>
                     </tr>
                     </c:forEach>

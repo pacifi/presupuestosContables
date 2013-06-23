@@ -18,7 +18,7 @@
         <body >        
 
             <div id="cuadroReporteR" style="width: 30%">
-                <h3>Formulario consumo</h3>
+                <h3>Formulario catalogo consumo</h3>
                 
                 <div>
                     <c:url var="consumoy" value="catalogoConsumoGuardar.pacifi" />        
