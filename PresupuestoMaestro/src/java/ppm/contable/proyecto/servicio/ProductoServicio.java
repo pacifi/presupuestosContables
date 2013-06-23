@@ -12,8 +12,9 @@ import ppm.contable.proyecto.modelo.PpmProducto;
  * @author Pacifi
  */
 public interface ProductoServicio {
-    
+
     public List<PpmProducto> listarProducto();
+
     public void insertaPeriodo(PpmProducto producto);
 
     public void eliminarProducto(int idProducto);
@@ -21,7 +22,4 @@ public interface ProductoServicio {
     public PpmProducto buscarProductoId(int idProducto);
 
     public void actualizarProducto(PpmProducto producto);
-
- 
-    
 }

@@ -69,4 +69,5 @@ public class CatalogoCivController {
         servicio.actualizaCatalogoCiv(catalogoCiv);
         return new ModelAndView("redirect:reporteCatalogoCiv.pacifi");
     }
+    
 }

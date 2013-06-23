@@ -25,9 +25,7 @@ public class ProductoServicioImplement implements ProductoServicio {
 
     @Override
     public List<PpmProducto> listarProducto() {
-
         return dao.listarProducto();
-
     }
 
     @Override

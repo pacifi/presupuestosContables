@@ -57,6 +57,7 @@ public class ProductoDaoImplement implements ProductoDao {
                 .setInteger(0, idProducto)
                 .executeUpdate();
         } catch (Exception e) {
+            System.out.println("error al eliminar Producto"+e.getMessage());
         }
     }
 
