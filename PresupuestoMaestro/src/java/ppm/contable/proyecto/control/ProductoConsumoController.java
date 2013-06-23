@@ -37,17 +37,13 @@ public class ProductoConsumoController {
 
         Map<String, Object> modelo = new HashMap<String, Object>();
         modelo.put("listProductoConsumo", lista);
-
-//      for (SauPeriodo to: lista){
-//      log.info("------------------->" + to.getPeriodo());
-//      }
         return new ModelAndView("contable/mantenimiento/productoConsumo/ProductoConsumo", modelo);
     }
 
     @RequestMapping(value = "productoConsumoGuardar", method = RequestMethod.POST)
     public ModelAndView guardarProductoConsumo(@ModelAttribute("ModeloProductoConsumo") PpmProductoConsumo productoConsumo, BindingResult result) {
         productoConsumoServicio.insertarProductoConsumo(productoConsumo);
-        return new ModelAndView("index");
+        return new ModelAndView("redirect:reporteProductoConsumo.pacifi");
     }
 
     @RequestMapping(value = "formProductoConsumo", method = RequestMethod.GET)
@@ -55,7 +51,7 @@ public class ProductoConsumoController {
         return new ModelAndView("contable/mantenimiento/productoConsumo/ProductoConsumoInsert");
     }
 
-    /////////
+
     @RequestMapping(value = "eliminarProductoConsumo", method = RequestMethod.GET)
     public ModelAndView eliminarProductoConsumo(HttpServletRequest request) {
         int idProductoConsumo = Integer.parseInt(request.getParameter("idPCon") == null ? "" : request.getParameter("idPCon"));
