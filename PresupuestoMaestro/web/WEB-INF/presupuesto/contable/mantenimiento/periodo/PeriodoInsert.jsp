@@ -14,41 +14,33 @@
             
         
     </head>
-    
+    <table border="1">
     <body >        
     
         <div id="cuadroReporteR" style="width: 30%">
-                        <h3>Formulario de Periodo</h3>
+                        <h3>Formulario consumo</h3>
                         <div>
-        <c:url var="periodoy" value="periodoGuardar.pacifi" />        
-        <fm:form modelAttribute="ModeloPeriodo" method="post" action="${periodoy}">
-           
-                  
-           
-        
-             <table border="1">
-               <tbody>
-                   
-                    
-                        
-                        <td> <fm:input path="nombreClienteRs" /><br></td>
-                    </tr>
-                    <tr>
-                        <td> <fm:label path="numeroDocumento">Numero Documento </fm:label></td>
-                        <td> <fm:input path="numeroDocumento" /></td>
-                    </tr>
-                   
-                    <tr>
-                        <td>Imprimir</td>
-                        <td> <input type="submit"  value="Registrar" name="registrar"/>
-                           </td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-                    </fm:form>  
-
+        <c:url var="productoy" value="periodoGuardar.pacifi" />        
+        <fm:form modelAttribute="ModeloPeriodo" method="post" action="${productoy}">
+         <tbody> 
+             <tr>
+            <td><fm:label path="estado"> ESTADO PERIODO</fm:label></td>
+            <td><fm:input path="estado"/><br></td>
+            </tr>
+            <tr>
+            <td><fm:label path="anioPronostico">AÑO PRONOSTICO</fm:label></td>
+            <td><fm:input path="anioPronostico"/><br></td>
+            </tr>
+            <tr>
+            <td><input type="submit" value="Enviar"/>
+            </td>
+            </tr>
+            </tbody>
+        </fm:form>
+                     
+ </table>
             </div>             
             </div>
     </body>
 </html>
+

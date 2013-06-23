@@ -17,9 +17,9 @@ public interface ProductoConsumoServicio {
 
     public void insertarProductoConsumo(PpmProductoConsumo productoConsumo);
 
-    public void eliminarProductoConsumo(String id);
+    public void eliminarProductoConsumo(int id);
 
-    public PpmProductoConsumo buscarProductoConsumoId(String idProducto);
+    public PpmProductoConsumo buscarProductoConsumoId(int idProducto);
 
     public void actualisarProductoConsumo(PpmProductoConsumo idProducto);
 }

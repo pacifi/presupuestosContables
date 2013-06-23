@@ -37,15 +37,20 @@ public class ProductoConsumoDaoImplement implements ProductoConsumoDao{
           System.out.println("lleeeeeeeeeeeeeeeeeeeeeeeeeeeeega");
     }
      @Override
-    public void eliminarProductoConsumo(String id){
-    sesionFactory.getCurrentSession()
+    public void eliminarProductoConsumo(int id){
+         try {
+             sesionFactory.getCurrentSession()
             .createQuery("delete  PpmProductoConsumo per where per.id=?")
-            .setString(0, id)            
+            .setInteger(0, id)            
             .executeUpdate();
+         } catch (Exception e) {
+             
+             System.out.println("error al eliminar"+e.getMessage());
+         }
     }
     
     @Override
-    public PpmProductoConsumo buscarProductoConsumo(String id){
+    public PpmProductoConsumo buscarProductoConsumo(int id){
     return (PpmProductoConsumo)sesionFactory.getCurrentSession().get(PpmProductoConsumo.class, id);
     }
     
@@ -54,10 +59,10 @@ public class ProductoConsumoDaoImplement implements ProductoConsumoDao{
     Session sesion=sesionFactory.openSession();
      System.out.println("------------------>"+productoConsumo.getPrecioGenerado());
         try {
-                sesion.beginTransaction().begin();
-                sesion.update(productoConsumo);
-                sesion.getTransaction().commit(); 
-        } catch (Exception e) { System.out.println("------------------>"+e.getMessage());
+            sesion.beginTransaction().begin();
+            sesion.update(productoConsumo);
+            sesion.getTransaction().commit();
+        } catch (Exception e) { System.out.println("error al actualizar"+e.getMessage());
         }
    
     }   

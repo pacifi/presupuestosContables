@@ -14,24 +14,26 @@
     </head>
     <body>
 
-        <c:if test="${!empty listProductoConsumo}"> 
 
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th colspan="3"> REPORTE PRODUCTO CONSUMO</th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Id PRODUCTO CONSUMO</td>
-                        <td>NOMBRE CONSUMO</td>
-                        <td>PRECIO UNITARIO</td>
-                        <td>MEDIDA BACE</td>
-                        <td>TIPO CONSUMO</td>
-                        
-                    </tr>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="3"> REPORTE PRODUCTO CONSUMO   <a href="formProductoConsumo.pacifi">insertar</a> 
+                             </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Id PRODUCTO CONSUMO</td>
+                    <td>NOMBRE CONSUMO</td>
+                    <td>PRECIO UNITARIO</td>
+                    <td>MEDIDA BACE</td>
+                    <td>TIPO CONSUMO</td>
+
+                </tr>
+                <c:if test="${!empty listProductoConsumo}"> 
                     <c:forEach items="${listProductoConsumo}" var="m">
                         <tr>
                             <td><c:out value="${m.id}"/></td>
@@ -39,12 +41,17 @@
                             <td><c:out value="${m.precioGenerado}"/></td>
                             <td><c:out value="${m.idProducto.nombreProducto}"/></td>
                             <td><c:out value="${m.idConsumo.nombreConsumo}"/></td>
-                        </tr>
+                            <td> 
+                                <a href="eliminarProductoConsumo.pacifi?idPCon=${m.id}">Eliminar</a> 
+                                <a href="editarProductoConsumo.pacifi?idProductoConsumoP=${m.id}">Editar</a> 
+                            </td>
+                        </tr> 
                     </c:forEach>
-                </tbody>
-            </table>
 
-        </c:if>
+                </c:if>
+            </tbody>
+        </table>
+
         <a href="index.pacifi">Ir Inicio</a>
 
 

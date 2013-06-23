@@ -35,12 +35,12 @@ public class CatalogoConsumoServicioImplement implements CatalogoConsumoServicio
     }
 
     @Override
-    public void eliminarCatalogoConsumo(String idConsumo) {
+    public void eliminarCatalogoConsumo(int idConsumo) {
         consumoDao.eliminarCatalogoConsumo(idConsumo);
     }
 
     @Override
-    public PpmCatalogoConsumo buscarCatalogoConsumoId(String idConsumo) {
+    public PpmCatalogoConsumo buscarCatalogoConsumoId(int idConsumo) {
         return consumoDao.buscarIdCatalogoConsumo(idConsumo);
     }
 

@@ -57,16 +57,16 @@ public class CatalogoConsumoController {
     
     /////////
     
-   /* @RequestMapping(value="eliminarCatalogoConsumo", method= RequestMethod.GET)
+    @RequestMapping(value="eliminarCatalogoConsumo", method= RequestMethod.GET)
    public ModelAndView eliminarCatalogoConsumo(HttpServletRequest request){
-       String idConsumo =request.getParameter("idCatalogoConsumoP")==null?"":request.getParameter("idCatalogoConsumoP");
+       int idConsumo =Integer.parseInt(request.getParameter("idCatalogoConsumoP")==null?"":request.getParameter("idCatalogoConsumoP"));
        catalogoConsumoServicio.eliminarCatalogoConsumo(idConsumo);
-   return new ModelAndView("redirect:reporteCatalogoConsumo.Pacifi");
+   return new ModelAndView("redirect:reporteCatalogoConsumo.pacifi");
    }
     //*Editar Periodo
     @RequestMapping(value="editarCatalogoConsumo", method= RequestMethod.GET)
     public ModelAndView editarCatalogoConsumoForm(HttpServletRequest request){
-    String idConsumo=request.getParameter("idConsumoP")==null?"":request.getParameter("idConsumoP");
+    int idConsumo=Integer.parseInt(request.getParameter("idConsumoP")==null?"":request.getParameter("idConsumoP"));
     PpmCatalogoConsumo consumoTO=null;
     consumoTO=catalogoConsumoServicio.buscarCatalogoConsumoId(idConsumo);    
     return new ModelAndView("contable/mantenimiento/consumo/formEditConsumo", "ActualizarCatalogoConsumo",consumoTO);    
@@ -75,6 +75,6 @@ public class CatalogoConsumoController {
     @RequestMapping(value="actualizarCatalogoConsumo", method= RequestMethod.POST)
     public ModelAndView actualizarCatalogoConsumo(@ModelAttribute("ActualizarCatalogoConsumo") PpmCatalogoConsumo  consumo, BindingResult result){
     catalogoConsumoServicio.actualisarCatalogoConsumo(consumo);
-    return new ModelAndView("reporteCatalogoConsumo.facifi");
-    }  */
+    return new ModelAndView("redirect:reporteCatalogoConsumo.pacifi");
+    }  
 }

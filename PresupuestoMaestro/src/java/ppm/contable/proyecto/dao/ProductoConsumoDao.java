@@ -17,9 +17,9 @@ public interface ProductoConsumoDao {
 
     public void insertarProductoConsumo(PpmProductoConsumo productoConsumo);
 
-    public void eliminarProductoConsumo(String id);
+    public void eliminarProductoConsumo(int id);
 
-    public PpmProductoConsumo buscarProductoConsumo(String id);
+    public PpmProductoConsumo buscarProductoConsumo(int id);
 
     public void actualizarProductoConsumo(PpmProductoConsumo productoConsumo);
 }

@@ -17,9 +17,9 @@ public interface CatalogoConsumoDao {
 
     public void insertarCatalogoConsumo(PpmCatalogoConsumo catalogoConsumo);
 
-    public void eliminarCatalogoConsumo(String idConsumo);
+    public void eliminarCatalogoConsumo(int idConsumo);
 
-    public PpmCatalogoConsumo buscarIdCatalogoConsumo(String idConsumo);
+    public PpmCatalogoConsumo buscarIdCatalogoConsumo(int idConsumo);
 
     public void actualizarCatalogoConsumo(PpmCatalogoConsumo catalogoConsumo);
 }

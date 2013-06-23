@@ -14,7 +14,7 @@
             
         
     </head>
-    
+    <table border="1">
     <body >        
     
         <div id="cuadroReporteR" style="width: 30%">
@@ -22,16 +22,23 @@
                         <div>
         <c:url var="medidasy" value="medidasGuardar.pacifi" />        
         <fm:form modelAttribute="ModeloMedidas" method="post" action="${medidasy}">
-         <fm:label path="nombreMedida">MEDIDAS</fm:label>
-            <fm:input path="nombreMedida"/><br>
-            <fm:label path="abreviatura">SIMBOLO</fm:label>
-            <fm:input path="abreviatura"/><br>
-            <input type="submit" value="Enviar"/>
+            <tbody>
+         <tr><td><fm:label path="nombreMedida">MEDIDAS</fm:label></td>
+           <td> <fm:input path="nombreMedida"/><br></td>
+            </tr>
+            <tr><td><fm:label path="abreviatura">SIMBOLO</fm:label></td>
+            <td><fm:input path="abreviatura"/><br></td>
+            </tr>
+            <tr> <td><input type="submit" value="Enviar"/>
+            </td>
+            </tr>
+            </tbody>
         </fm:form>
                      
 
             </div>             
             </div>
+        </table>
     </body>
 </html>
 

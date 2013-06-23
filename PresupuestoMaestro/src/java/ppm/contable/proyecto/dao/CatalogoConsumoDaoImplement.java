@@ -37,15 +37,20 @@ public class CatalogoConsumoDaoImplement implements CatalogoConsumoDao{
           System.out.println("lleeeeeeeeeeeeeeeeeeeeeeeeeeeeega");
     }
      @Override
-    public void eliminarCatalogoConsumo(String idConsumo){
-    sesionFactory.getCurrentSession()
-            .createQuery("delete  PpmCatalogoConsumo per where per.idConsum=?")
-            .setString(0, idConsumo)            
+    public void eliminarCatalogoConsumo(int idConsumo){
+         try {
+              sesionFactory.getCurrentSession()
+            .createQuery("delete  PpmCatalogoConsumo per where per.idConsumo=?")
+            .setInteger(0, idConsumo)            
             .executeUpdate();
+              System.out.println("aqui esta llegando............ssssssss");
+         } catch (Exception e) {
+             System.out.println("noooooooooooooooooooooooo lleeeeeeeeeeeeeeeeeeeeeeeega");
+         }
     }
     
     @Override
-    public PpmCatalogoConsumo buscarIdCatalogoConsumo(String idConsumo){
+    public PpmCatalogoConsumo buscarIdCatalogoConsumo(int idConsumo){
     return (PpmCatalogoConsumo)sesionFactory.getCurrentSession().get(PpmCatalogoConsumo.class, idConsumo);
     }
     

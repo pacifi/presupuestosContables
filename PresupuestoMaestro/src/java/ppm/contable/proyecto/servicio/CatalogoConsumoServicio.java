@@ -17,9 +17,9 @@ public interface CatalogoConsumoServicio {
 
     public void insertarCatalogoConsumo(PpmCatalogoConsumo consumo);
 
-    public void eliminarCatalogoConsumo(String idConsumo);
+    public void eliminarCatalogoConsumo(int idConsumo);
 
-    public PpmCatalogoConsumo buscarCatalogoConsumoId(String idConsumo);
+    public PpmCatalogoConsumo buscarCatalogoConsumoId(int idConsumo);
 
     public void actualisarCatalogoConsumo(PpmCatalogoConsumo consumo);
 }

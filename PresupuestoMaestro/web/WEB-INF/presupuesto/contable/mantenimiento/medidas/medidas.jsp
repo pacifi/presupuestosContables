@@ -35,7 +35,10 @@
                         <td><c:out value="${m.idMedidas}"/></td>
                         <td><c:out value="${m.nombreMedida}"/></td>
                         <td><c:out value="${m.abreviatura}"/></td>
-                        
+                        <td> 
+                            <a href="eliminarProducto.pacifi?idProductoP=${p.idProducto}">Eliminar</a> 
+                            <a href="editarProductoForm.pacifi?idProductoP=${p.idProducto}">Editar</a> 
+                        </td>
                     </tr>
                     </c:forEach>
                 </tbody>

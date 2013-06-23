@@ -35,7 +35,10 @@
                         <td><c:out value="${p.idPeriodo}"/></td>
                         <td><c:out value="${p.estado}"/></td>
                         <td><c:out value="${p.anioPronostico}"/></td>
-                        
+                       <td> 
+                            <a href="eliminarProducto.pacifi?idProductoP=${p.idProducto}">Eliminar</a> 
+                            <a href="editarProductoForm.pacifi?idProductoP=${p.idProducto}">Editar</a> 
+                        </td> 
                     </tr>
                     </c:forEach>
                 </tbody>

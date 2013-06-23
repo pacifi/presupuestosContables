@@ -36,12 +36,12 @@ public class ProductoConsumoServicioImplement implements ProductoConsumoServicio
     }
 
     @Override
-    public void eliminarProductoConsumo(String id) {
+    public void eliminarProductoConsumo(int id) {
         productoConsumoDao.eliminarProductoConsumo(id);
     }
 
     @Override
-    public PpmProductoConsumo buscarProductoConsumoId(String idProducto) {
+    public PpmProductoConsumo buscarProductoConsumoId(int idProducto) {
         return productoConsumoDao.buscarProductoConsumo(idProducto);
     }
 

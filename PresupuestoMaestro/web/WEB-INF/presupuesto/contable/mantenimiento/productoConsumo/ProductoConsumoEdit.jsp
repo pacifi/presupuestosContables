@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ProductoConsumoInsert
-    Created on : 22/06/2013, 01:49:25 PM
+    Document   : ProductoConsumoEdit
+    Created on : 22/06/2013, 05:28:13 PM
     Author     : Pc
 --%>
 
@@ -19,9 +19,10 @@
     
         <div id="cuadroReporteR" style="width: 30%">
                         <h3>Formulario PRODUCTO CONSUMO</h3>
-                        <div>
-        <c:url var="productoConsumoy" value="productoConsumoGuardar.pacifi" />        
-        <fm:form modelAttribute="ModeloProductoConsumo" method="post" action="${productoConsumoy}">
+                        
+        <c:url var="productoConsumoActualizary" value="actualizarProductoConsumo.pacifi" />        
+        <fm:form modelAttribute="ActualizarProductoConsumo" method="post" action="${productoConsumoActualizary}">
+            <fm:hidden path="id" /><br>
          <tbody>
             <tr><td><fm:label path="cantidadUso"> CANTIDAD CONSUMO</fm:label></td>
             <td><fm:input path="cantidadUso"/><br></td>
@@ -45,5 +46,6 @@
             </div>
     </body>
 </html>
+
 
 
