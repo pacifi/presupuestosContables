@@ -5,7 +5,9 @@
 package ppm.contable.proyecto.modelo;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,8 +15,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -26,6 +30,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "PpmPeriodo.findAll", query = "SELECT p FROM PpmPeriodo p")})
 public class PpmPeriodo implements Serializable {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPeriodo")
+    private Collection<PpmProyecto> ppmProyectoCollection;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -99,6 +105,15 @@ public class PpmPeriodo implements Serializable {
     @Override
     public String toString() {
         return "ppm.contable.proyecto.modelo.PpmPeriodo[ idPeriodo=" + idPeriodo + " ]";
+    }
+
+    @XmlTransient
+    public Collection<PpmProyecto> getPpmProyectoCollection() {
+        return ppmProyectoCollection;
+    }
+
+    public void setPpmProyectoCollection(Collection<PpmProyecto> ppmProyectoCollection) {
+        this.ppmProyectoCollection = ppmProyectoCollection;
     }
     
 }

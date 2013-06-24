@@ -19,4 +19,5 @@ public interface PronosticoVentaDao {
     public void eliminarPronosticoVenta(int id);
     public PpmPronosticoVenta buscarPronosticoVentaId(int id);
     public void actualizarPronosticoVenta(PpmPronosticoVenta pronosticoVenta);
+    public List<PpmPronosticoVenta> listarPronosticoVentadeProducto(int id);
 }

@@ -20,31 +20,36 @@ import ppm.contable.proyecto.modelo.PpmPronosticoVenta;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class PronosticoVentaServicioImplement implements PronosticoVentaServicio {
 
-   @Autowired
+    @Autowired
     public PronosticoVentaDao dao;
 
-   @Override
+    @Override
     public List<PpmPronosticoVenta> listaPronosticoVenta() {
         return dao.listarPronosticoVenta();
     }
 
-   @Override
+    @Override
     public void insertaPronosticoVenta(PpmPronosticoVenta ppv) {
         dao.insertarPronosticoVenta(ppv);
     }
 
-   @Override
+    @Override
     public void eliminarPronosticoVenta(int id) {
         dao.eliminarPronosticoVenta(id);
     }
 
-   @Override
+    @Override
     public PpmPronosticoVenta buscarPronosticoVenta(int id) {
         return dao.buscarPronosticoVentaId(id);
     }
 
-   @Override
+    @Override
     public void actualizarPronosticoVenta(PpmPronosticoVenta ppv) {
         dao.actualizarPronosticoVenta(ppv);
+    }
+
+    @Override
+    public List<PpmPronosticoVenta> listaPronosticoVentasProducto(int id) {
+        return dao.listarPronosticoVentadeProducto(id);
     }
 }

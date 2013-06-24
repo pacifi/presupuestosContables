@@ -22,4 +22,6 @@ public interface PronosticoVentaServicio {
     public PpmPronosticoVenta buscarPronosticoVenta(int id);
 
     public void actualizarPronosticoVenta(PpmPronosticoVenta ppv);
+
+    public List<PpmPronosticoVenta> listaPronosticoVentasProducto(int id);
 }

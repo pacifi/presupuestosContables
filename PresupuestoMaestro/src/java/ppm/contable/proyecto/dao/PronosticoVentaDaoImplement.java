@@ -4,8 +4,6 @@ package ppm.contable.proyecto.dao;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
@@ -19,7 +17,7 @@ import ppm.contable.proyecto.modelo.PpmPronosticoVenta;
  * @author Pacifi
  */
 @Repository
-public class PronosticoVentaDaoImplement implements PronosticoVentaDao{
+public class PronosticoVentaDaoImplement implements PronosticoVentaDao {
 
     @Autowired
     public SessionFactory sessionFactory;
@@ -29,6 +27,20 @@ public class PronosticoVentaDaoImplement implements PronosticoVentaDao{
         List<PpmPronosticoVenta> lista = new ArrayList<PpmPronosticoVenta>();
         try {
             lista = sessionFactory.getCurrentSession().createCriteria(PpmPronosticoVenta.class).list();
+        } catch (Exception e) {
+            System.out.println("error al listar PronostivoVenta" + e.getMessage());
+        }
+        return lista;
+    }
+
+    @Override
+    public List<PpmPronosticoVenta> listarPronosticoVentadeProducto(int id) {
+        List<PpmPronosticoVenta> lista = new ArrayList<PpmPronosticoVenta>();
+        try {
+            lista = sessionFactory.getCurrentSession()
+                    .createSQLQuery("select * from ppm_pronostico_venta where id_producto=?")
+                    .setInteger(0, id)
+                    .list();
         } catch (Exception e) {
             System.out.println("error al listar PronostivoVenta" + e.getMessage());
         }
@@ -51,7 +63,7 @@ public class PronosticoVentaDaoImplement implements PronosticoVentaDao{
     public void eliminarPronosticoVenta(int id) {
         try {
             sessionFactory.getCurrentSession()
-                    .createQuery("DELETE PpmPronosticoVenta pro where pro.idPronostico?")
+                    .createQuery("DELETE PpmPronosticoVenta pro where pro.idPronostico=?")
                     .setInteger(0, id)
                     .executeUpdate();
         } catch (Exception e) {
@@ -64,22 +76,22 @@ public class PronosticoVentaDaoImplement implements PronosticoVentaDao{
     public PpmPronosticoVenta buscarPronosticoVentaId(int id) {
         PpmPronosticoVenta ppv = null;
         try {
-            ppv= (PpmPronosticoVenta) sessionFactory.getCurrentSession().get(PpmPronosticoVenta.class, id);
+            ppv = (PpmPronosticoVenta) sessionFactory.getCurrentSession().get(PpmPronosticoVenta.class, id);
         } catch (Exception e) {
-        System.out.println("error al buscar pronosticoVenta Id"+e.getMessage());
+            System.out.println("error al buscar pronosticoVenta Id" + e.getMessage());
         }
-        return  ppv;
+        return ppv;
     }
-    
+
     @Override
-    public void actualizarPronosticoVenta(PpmPronosticoVenta pronosticoVenta){
-        Session session=sessionFactory.openSession();
+    public void actualizarPronosticoVenta(PpmPronosticoVenta pronosticoVenta) {
+        Session session = sessionFactory.openSession();
         try {
             session.beginTransaction().begin();
             session.update(pronosticoVenta);
             session.getTransaction().commit();
         } catch (Exception e) {
-            System.out.println("error al actualizar el pronosticoVenta"+e.getMessage());
+            System.out.println("error al actualizar el pronosticoVenta" + e.getMessage());
         }
     }
 }
