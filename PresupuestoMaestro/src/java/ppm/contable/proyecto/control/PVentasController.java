@@ -40,6 +40,7 @@ public class PVentasController {
         for (PpmPronosticoVenta ppmPronosticoVenta : lista) {
            if(i<11){
             dato=lista.get(i+1).getUnidadesVenta()*inv/100;
+            
             listaR.add(dato);
            }i++;
         }

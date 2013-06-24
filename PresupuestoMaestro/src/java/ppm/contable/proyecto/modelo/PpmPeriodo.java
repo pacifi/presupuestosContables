@@ -30,8 +30,6 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "PpmPeriodo.findAll", query = "SELECT p FROM PpmPeriodo p")})
 public class PpmPeriodo implements Serializable {
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPeriodo")
-    private Collection<PpmProyecto> ppmProyectoCollection;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,6 +42,8 @@ public class PpmPeriodo implements Serializable {
     @Basic(optional = false)
     @Column(name = "anio_pronostico")
     private String anioPronostico;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPeriodo")
+    private Collection<PpmProyecto> ppmProyectoCollection;
 
     public PpmPeriodo() {
     }
@@ -82,6 +82,15 @@ public class PpmPeriodo implements Serializable {
         this.anioPronostico = anioPronostico;
     }
 
+    @XmlTransient
+    public Collection<PpmProyecto> getPpmProyectoCollection() {
+        return ppmProyectoCollection;
+    }
+
+    public void setPpmProyectoCollection(Collection<PpmProyecto> ppmProyectoCollection) {
+        this.ppmProyectoCollection = ppmProyectoCollection;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -105,15 +114,6 @@ public class PpmPeriodo implements Serializable {
     @Override
     public String toString() {
         return "ppm.contable.proyecto.modelo.PpmPeriodo[ idPeriodo=" + idPeriodo + " ]";
-    }
-
-    @XmlTransient
-    public Collection<PpmProyecto> getPpmProyectoCollection() {
-        return ppmProyectoCollection;
-    }
-
-    public void setPpmProyectoCollection(Collection<PpmProyecto> ppmProyectoCollection) {
-        this.ppmProyectoCollection = ppmProyectoCollection;
     }
     
 }

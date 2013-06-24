@@ -42,6 +42,12 @@ public class PpmProductoConsumo implements Serializable {
     @Basic(optional = false)
     @Column(name = "precio_generado")
     private BigDecimal precioGenerado;
+    @Basic(optional = false)
+    @Column(name = "politica_invfin")
+    private BigDecimal politicaInvfin;
+    @Basic(optional = false)
+    @Column(name = "inv_inicial")
+    private int invInicial;
     @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
     @ManyToOne(optional = false)
     private PpmProducto idProducto;
@@ -56,10 +62,12 @@ public class PpmProductoConsumo implements Serializable {
         this.id = id;
     }
 
-    public PpmProductoConsumo(Integer id, BigDecimal cantidadUso, BigDecimal precioGenerado) {
+    public PpmProductoConsumo(Integer id, BigDecimal cantidadUso, BigDecimal precioGenerado, BigDecimal politicaInvfin, int invInicial) {
         this.id = id;
         this.cantidadUso = cantidadUso;
         this.precioGenerado = precioGenerado;
+        this.politicaInvfin = politicaInvfin;
+        this.invInicial = invInicial;
     }
 
     public Integer getId() {
@@ -84,6 +92,22 @@ public class PpmProductoConsumo implements Serializable {
 
     public void setPrecioGenerado(BigDecimal precioGenerado) {
         this.precioGenerado = precioGenerado;
+    }
+
+    public BigDecimal getPoliticaInvfin() {
+        return politicaInvfin;
+    }
+
+    public void setPoliticaInvfin(BigDecimal politicaInvfin) {
+        this.politicaInvfin = politicaInvfin;
+    }
+
+    public int getInvInicial() {
+        return invInicial;
+    }
+
+    public void setInvInicial(int invInicial) {
+        this.invInicial = invInicial;
     }
 
     public PpmProducto getIdProducto() {

@@ -1,5 +1,4 @@
 /*
- * 
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -51,6 +50,9 @@ public class PpmProducto implements Serializable {
     @Column(name = "politica_invfin")
     private BigDecimal politicaInvfin;
     @Basic(optional = false)
+    @Column(name = "inv_inicial")
+    private int invInicial;
+    @Basic(optional = false)
     @Column(name = "margen_ganancia")
     private BigDecimal margenGanancia;
     @JoinColumn(name = "id_proyecto", referencedColumnName = "id_proyecto")
@@ -72,11 +74,12 @@ public class PpmProducto implements Serializable {
         this.idProducto = idProducto;
     }
 
-    public PpmProducto(Integer idProducto, String nombreProducto, String descripcion, BigDecimal politicaInvfin, BigDecimal margenGanancia) {
+    public PpmProducto(Integer idProducto, String nombreProducto, String descripcion, BigDecimal politicaInvfin, int invInicial, BigDecimal margenGanancia) {
         this.idProducto = idProducto;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
         this.politicaInvfin = politicaInvfin;
+        this.invInicial = invInicial;
         this.margenGanancia = margenGanancia;
     }
 
@@ -110,6 +113,14 @@ public class PpmProducto implements Serializable {
 
     public void setPoliticaInvfin(BigDecimal politicaInvfin) {
         this.politicaInvfin = politicaInvfin;
+    }
+
+    public int getInvInicial() {
+        return invInicial;
+    }
+
+    public void setInvInicial(int invInicial) {
+        this.invInicial = invInicial;
     }
 
     public BigDecimal getMargenGanancia() {

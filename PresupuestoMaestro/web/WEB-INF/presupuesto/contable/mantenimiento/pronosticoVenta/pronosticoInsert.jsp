@@ -25,8 +25,8 @@
                         <tbody>
                            
                             <tr>
-                                <td><fm:label   path="unidadesVenta">Pronostico de Unidades Enereo</fm:label></td>
-                                <td><fm:input path="unidadesVenta"/><br></td>
+                                <td><fm:label   path="unidadesVenta[]">Pronostico de Unidades Enereo</fm:label></td>
+                                <td><fm:input path="unidadesVenta[]"/><br></td>
                             </tr>
                             <tr>
                                 <td><fm:label   path="unidadesVenta">Pronostico de Unidades Febrero</fm:label></td>

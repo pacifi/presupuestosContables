@@ -38,6 +38,7 @@ public class PronosticoVentaController {
 
     @RequestMapping(value = "formPronosticogoInsert", method = RequestMethod.GET)
     public ModelAndView irFormulario(@ModelAttribute("ModeloPronostico") PpmPronosticoVenta pronosticoVenta, BindingResult result) {
+        
         return new ModelAndView("contable/mantenimiento/pronosticoVenta/pronosticoInsert");
     }
 
