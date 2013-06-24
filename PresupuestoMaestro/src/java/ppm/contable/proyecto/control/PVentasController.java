@@ -4,6 +4,8 @@
  */
 package ppm.contable.proyecto.control;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,12 +31,25 @@ public class PVentasController {
     
     @RequestMapping(value = "reportePronosticoVentaProducto", method = RequestMethod.GET)
     public ModelAndView opracionVenta(){
-        
+        Double inv=Double.parseDouble(String.valueOf(productoServicio.buscarProductoId(7).getPoliticaInvfin()));
+       Double dato;
         List<PpmPronosticoVenta> lista=pvs.listaPronosticoVentasProducto(7);
+        List<Object> listaR=new ArrayList<Object>();
         
-        System.out.println("aca datos capturados"+lista.get(1).getIdProducto().getNombreProducto());
-    
+        int i=0;
+        for (PpmPronosticoVenta ppmPronosticoVenta : lista) {
+           if(i<11){
+            dato=lista.get(i+1).getUnidadesVenta()*inv/100;
+            listaR.add(dato);
+           }i++;
+        }
+        dato=(double)lista.get(0).getUnidadesVenta();
+        listaR.add(dato);
+        
+       
         return  null;
     }
+    
+    
     
 }

@@ -38,11 +38,11 @@ public class PronosticoVentaDaoImplement implements PronosticoVentaDao {
         List<PpmPronosticoVenta> lista = new ArrayList<PpmPronosticoVenta>();
         try {
             lista = sessionFactory.getCurrentSession()
-                    .createSQLQuery("select * from ppm_pronostico_venta where id_producto=?")
+                    .createQuery( "SELECT p FROM PpmPronosticoVenta p where p.idProducto=?")
                     .setInteger(0, id)
                     .list();
         } catch (Exception e) {
-            System.out.println("error al listar PronostivoVenta" + e.getMessage());
+            System.out.println("error al listar PronostivoVentaProducto" + e.getMessage());
         }
         return lista;
     }
