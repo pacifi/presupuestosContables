@@ -29,8 +29,8 @@
                 <c:forEach items="${listaPresupuesto}" var="p">
                     <tr>
                         <td><c:out value="${p.meses}"/></td>
-                        <td><c:out value="${p.meses}"/></td>
                         <td><c:out value="${p.presupuesto}"/></td>
+                        <td><c:out value="${p.total}"/></td>
 
                     </tr>
                 </c:forEach>
