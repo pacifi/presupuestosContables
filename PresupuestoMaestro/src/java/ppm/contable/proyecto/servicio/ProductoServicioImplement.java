@@ -47,4 +47,9 @@ public class ProductoServicioImplement implements ProductoServicio {
     public void actualizarProducto(PpmProducto producto) {
         dao.actualizarProducto(producto);
     }
+
+    @Override
+    public List<PpmProducto> listarProductodeProyecto(int idProyecto) {
+        return dao.listarProductodeProyecto(idProyecto);
+    }
 }

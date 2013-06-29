@@ -35,6 +35,22 @@ public class ProductoDaoImplement implements ProductoDao {
     }
 
     @Override
+    public List<PpmProducto> listarProductodeProyecto(int idProyecto) {
+        
+        List<PpmProducto> lista= new ArrayList<PpmProducto>();
+        try {
+            lista= sessionFactory.getCurrentSession()
+                    .createQuery("SELECT p FROM PpmProducto p where p.idProyecto?")
+                    .setInteger(0, idProyecto)
+                    .list();
+        } catch (Exception e) {
+            System.out.println("Error al reportar id productoo por idproyecto"+e.getMessage());
+        }
+
+        return lista;
+    }
+
+    @Override
     public void insertaProducto(PpmProducto producto) {
         try {
             Session session = sessionFactory.openSession();
@@ -53,11 +69,11 @@ public class ProductoDaoImplement implements ProductoDao {
     public void eliminarProducto(int idProducto) {
         try {
             sessionFactory.getCurrentSession()
-                .createQuery("delete PpmProducto pro where pro.idProducto=?")
-                .setInteger(0, idProducto)
-                .executeUpdate();
+                    .createQuery("delete PpmProducto pro where pro.idProducto=?")
+                    .setInteger(0, idProducto)
+                    .executeUpdate();
         } catch (Exception e) {
-            System.out.println("error al eliminar Producto"+e.getMessage());
+            System.out.println("error al eliminar Producto" + e.getMessage());
         }
     }
 

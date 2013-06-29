@@ -22,4 +22,6 @@ public interface ProductoServicio {
     public PpmProducto buscarProductoId(int idProducto);
 
     public void actualizarProducto(PpmProducto producto);
+
+    public List<PpmProducto> listarProductodeProyecto(int idProyecto) ;
 }
