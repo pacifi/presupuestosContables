@@ -40,7 +40,7 @@ public class ProductoDaoImplement implements ProductoDao {
         List<PpmProducto> lista= new ArrayList<PpmProducto>();
         try {
             lista= sessionFactory.getCurrentSession()
-                    .createQuery("SELECT p FROM PpmProducto p where p.idProyecto?")
+                    .createQuery("SELECT p FROM PpmProducto p where p.idProyecto=?")
                     .setInteger(0, idProyecto)
                     .list();
         } catch (Exception e) {

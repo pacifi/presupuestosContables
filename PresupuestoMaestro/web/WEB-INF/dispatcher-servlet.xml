@@ -56,7 +56,7 @@
                 <value>ppm.contable.proyecto.modelo.PpmProductoConsumo</value>
                 <value>ppm.contable.proyecto.modelo.PpmProyecto</value>
                 <value>ppm.contable.proyecto.modelo.PpmPronosticoVenta</value>
-                            							
+                                       							
             </list>
         </property>
         <property name="hibernateProperties">

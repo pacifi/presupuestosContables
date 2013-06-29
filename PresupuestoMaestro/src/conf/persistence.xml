@@ -14,6 +14,7 @@
     <class>ppm.contable.proyecto.modelo.PpmProductoConsumo</class>
     <class>ppm.contable.proyecto.modelo.PpmProyecto</class>
     <class>ppm.contable.proyecto.modelo.PpmPronosticoVenta</class>
+    <class>ppm.contable.proyecto.modelo.Vistapresupuestoventa</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dba_ppmaestro?zeroDateTimeBehavior=convertToNull"/>

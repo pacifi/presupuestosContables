@@ -19,6 +19,6 @@
         <a href="reporteCatalogoCif.pacifi"> catalogo cif</a><br>
         <a href="reporteProductoCiv.pacifi"> catalogo productoCiv</a><br>
         <a href="reportePronostico.pacifi"> ir al reporte Pronostico</a><br>
-        <a href="reportePronosticoVentaProducto.pacifi"> ir prueba </a><br>
+        <a href="presupuestoVentas.pacifi"> ir prueba </a><br>
     </body>
 </html>
