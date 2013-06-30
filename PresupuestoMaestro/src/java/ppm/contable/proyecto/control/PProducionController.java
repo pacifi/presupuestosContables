@@ -52,11 +52,12 @@ public class PProducionController {
         List<PpmProducto> listaProducto = productoServicio.listarProductodeProyecto(idProyecto);
         ModelosPresupuestoProduccion lista;
         List<ModelosPresupuestoProduccion> lisr = new ArrayList();
-
+int idpp=0;
         for (int j = 0; j < listaProducto.size(); j++) {
-            idProducto = listaProducto.get(j).getIdProducto();
-            for (int i = 0; i < pronosticoVentasList.size(); i++) {
 
+            idProducto = listaProducto.get(j).getIdProducto();
+            pronosticoVentasList = pvs.listaPronosticoVentasProducto(idProducto);
+            for (int i = 0; i < pronosticoVentasList.size(); i++) {
                 if (i == 0) {
                     invIni = (double) productoServicio.buscarProductoId(idProducto).getInvInicial();
                 }
@@ -75,14 +76,12 @@ public class PProducionController {
                 produccion.setProduccionRequerida(resultado);
                 listPro.add(produccion);
             }
+            resultado = 0.0;
 
         }
         Map<String, Object> modelo = new HashMap<String, Object>();
         modelo.put("listaPresupuesto", listPro);
         modelo.put("listaProducto", listaProducto);
-
-
-
         return new ModelAndView("contable/presupuestos/produccion", modelo);
     }
 }

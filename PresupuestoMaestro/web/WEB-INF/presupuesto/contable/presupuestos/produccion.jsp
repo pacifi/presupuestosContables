@@ -11,10 +11,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Presupuesto de Ventas</title>
+    <link type="text/css" rel="stylesheet" href="<c:url value="/Recursos/bootstrap/css/bootstrap.css"/>">
+        <script type="text/javascript" src="<c:url value="/Recursos/bootstrap/js/bootstrap.js"/>"></script>
+   
     </head>
     <body>
-
-        <table border="1">
+        <div class="container">
+            <table border="1" class="table">
             <thead>
                 <tr>
                     <th>Meses</th>
@@ -23,20 +26,21 @@
                 </tr>
             </thead>
             <tbody>
-               <c:forEach items="${listaProducto}" var="pr">
-                <tr>  <td><c:out value="${pr.nombreProducto}"/></td>
-                </tr>
+               
+               
                 <c:forEach items="${listaPresupuesto}" var="p">
                     <tr>
+                        <td><c:out value="${p.nombreProducto}"/></td>
                         <td><c:out value="${p.meses}"/></td>
                         <td><c:out value="${p.produccionRequerida}"/></td>
                         <td><c:out value="${p.total}"/></td>
 
                     </tr>
                 </c:forEach>
-                  </c:forEach>   
+             
             </tbody>
         </table>
+            </div>
 </body>
 </html>
 
