@@ -112,5 +112,5 @@ public class PpmPronosticoVenta implements Serializable {
     public String toString() {
         return "ppm.contable.proyecto.modelo.PpmPronosticoVenta[ idPronostico=" + idPronostico + " ]";
     }
-    
+   
 }

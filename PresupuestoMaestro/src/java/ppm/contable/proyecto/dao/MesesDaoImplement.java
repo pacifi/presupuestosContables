@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import ppm.contable.proyecto.modelo.PpmMeses;
 import ppm.contable.proyecto.modelo.PpmPeriodo;
 
@@ -15,6 +16,7 @@ import ppm.contable.proyecto.modelo.PpmPeriodo;
  *
  * @author Pc
  */
+@Repository
 public class MesesDaoImplement implements MesesDao {
 
     @Autowired
@@ -34,6 +36,15 @@ public class MesesDaoImplement implements MesesDao {
 
     @Override
     public PpmMeses buscarIdMeses(int idMeses) {
-        return (PpmMeses) sessionFactory.getCurrentSession().get(PpmPeriodo.class, idMeses);
+
+        PpmMeses meses = null;
+        try {
+              meses = (PpmMeses) sessionFactory.getCurrentSession().get(PpmMeses.class, idMeses);
+       } catch (Exception e) {
+            System.out.println("error al buscar idmeses "+e.getMessage());
+                    
+        }
+
+        return meses;
     }
 }

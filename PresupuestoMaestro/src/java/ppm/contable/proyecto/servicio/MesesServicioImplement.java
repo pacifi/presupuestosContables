@@ -19,17 +19,18 @@ import ppm.contable.proyecto.modelo.PpmPeriodo;
  */
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class MesesServicioImplement implements MesesServicio{
-    
+public class MesesServicioImplement implements MesesServicio {
+
     @Autowired
     public MesesDao mesesDao;
-    
+
     @Override
-    public List<PpmMeses> listaMeses(){
+    public List<PpmMeses> listaMeses() {
         return mesesDao.listaMeses();
     }
-     @Override
-    public PpmMeses buscarPeriodoId(int idMeses){
-    return mesesDao.buscarIdMeses(idMeses);
+
+    @Override
+    public PpmMeses buscarIdMeses(int idMeses) {
+        return mesesDao.buscarIdMeses(idMeses);
     }
 }

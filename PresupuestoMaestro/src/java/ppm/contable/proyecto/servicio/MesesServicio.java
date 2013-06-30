@@ -6,7 +6,6 @@ package ppm.contable.proyecto.servicio;
 
 import java.util.List;
 import ppm.contable.proyecto.modelo.PpmMeses;
-import ppm.contable.proyecto.modelo.PpmPeriodo;
 
 /**
  *
@@ -14,5 +13,5 @@ import ppm.contable.proyecto.modelo.PpmPeriodo;
  */
 public interface MesesServicio {
  public List<PpmMeses> listaMeses();
- public PpmMeses buscarPeriodoId(int idMeses);
+public PpmMeses buscarIdMeses(int idMeses);
 }
