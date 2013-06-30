@@ -34,9 +34,10 @@
         <table border="1" class="table">
             <thead>
                 <tr>
-                    <th>Meses</th>
-                    <th>Presupuesto de Venta</th>
-                    <th>Total</th>
+                    <th>Producto</th>
+                    <th> Mes</th>
+                    <th>Total Parcial Mes </th>
+                    <th>Total Acumulado</th>
                 </tr>
             </thead>
             <tbody>

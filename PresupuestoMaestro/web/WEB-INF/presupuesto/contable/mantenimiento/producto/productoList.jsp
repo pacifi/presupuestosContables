@@ -78,6 +78,7 @@
             </div>>
         </c:if>
 
-        <a href="presupuestoVentas.pacifi?idProyecto=<%=idProyecto%>"> Presupuesto de Ventas</a>
+        <a href="presupuestoVentas.pacifi?idProyecto=<%=idProyecto%>"> Presupuesto de Ventas</a><br>
+        <a href="presupuestoProduccion.pacifi?idProyecto=<%=idProyecto%>"> Presupuesto de Produccion</a>
     </body>
 </html>
