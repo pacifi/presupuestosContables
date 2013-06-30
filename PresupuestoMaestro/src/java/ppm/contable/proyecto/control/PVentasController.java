@@ -50,9 +50,10 @@ public class PVentasController {
         List<PpmProducto> listaProducto = productoServicio.listarProductodeProyecto(idProyecto);
         ModelosPresupuestoVenta venta;
         List<ModelosPresupuestoVenta> lisr = new ArrayList();
-        
+
         for (int j = 0; j < listaProducto.size(); j++) {
             idProducto = listaProducto.get(j).getIdProducto();
+
             for (int i = 0; i < 12; i++) {
                 pronosticoVentas = pvs.listaPronosticoVentasProducto(idProducto).get(i).getUnidadesVenta();
                 margenGanancia = (Double.parseDouble(String.valueOf(productoServicio.buscarProductoId(idProducto).getMargenGanancia())) / 100) + 1;
@@ -65,7 +66,9 @@ public class PVentasController {
                 venta.setNombreProducto(productoServicio.buscarProductoId(idProducto).getNombreProducto());
                 venta.setTotal(total);
                 lisr.add(venta);
+
             }
+
 
         }
 
