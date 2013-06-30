@@ -21,28 +21,20 @@
 
                 <tbody>
                     <tr>
-                        <td><fm:label path="nombreProducto">nombreProducto</fm:label></td>
-                        <td><fm:input path="nombreProducto"/></td>
+                        <td><fm:label path="nombrePresupuestos">Nombre de Proyecto</fm:label></td>
+                        <td><fm:input path="nombrePresupuestos"/></td>
                     </tr>
                     <tr>
-                        <td><fm:label path="descripcion"> descripcion del producto</fm:label></td>
-                        <td><fm:input path="descripcion"/></td>
+                        <td><fm:label path="nombreEmpresa">Empresa</fm:label></td>
+                        <td><fm:input path="nombreEmpresa"/></td>
                     </tr>
                     <tr>
-                        <td><fm:label path="invInicial">% Inventario Inicial </fm:label></td>
-                        <td><fm:input path="invInicial"/></td>
+                        <td><fm:label path="codigo">Codigo </fm:label></td>
+                        <td><fm:input path="codigo"/></td>
                     </tr>
                     <tr>
-                        <td><fm:label path="politicaInvfin">% para los inventarios finales</fm:label></td>
-                        <td><fm:input path="politicaInvfin"/></td>
-                    </tr>
-                    <tr>
-                        <td><fm:label path="margenGanancia">% para el margen de ganancia</fm:label></td>
-                        <td><fm:input path="margenGanancia"/></td>
-                    </tr>
-                    <tr>
-                        <td><fm:label path="idProyecto.idProyecto" >Codigo del Proyecto</fm:label></td>
-                        <td><fm:input path="idProyecto.idProyecto" /></td>
+                        <td><fm:label path="idPeriodo">Id Periodo</fm:label></td>
+                        <td><fm:input path="idPeriodo"/></td>
                     </tr>
                     <tr>
                         <td>Imprimir</td>

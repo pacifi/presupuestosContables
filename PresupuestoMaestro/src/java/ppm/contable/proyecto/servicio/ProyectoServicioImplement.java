@@ -27,4 +27,8 @@ public class ProyectoServicioImplement implements ProyectoServicio{
     public List<PpmProyecto> listaProyecto(){
         return proyectoDao.listaProyecto();
     }
+    @Override
+    public void insertaProyecto(PpmProyecto proyecto) {
+        proyectoDao.insertaProducto(proyecto);
+    }
 }
