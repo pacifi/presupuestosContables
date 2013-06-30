@@ -41,7 +41,7 @@
 
                     <thead >
                         <tr>
-                            <th colspan="7">Reporte de productos</th>
+                            <th colspan="7">Reporte de productos  <a href="formProducto.pacifi">INSERTAR PRODUCTOS</a></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,7 +49,7 @@
                             <td>id Producto</td>
                             <td>Nombre Producto</td>
                             <td>descripcion</td>
-                            <td> % Inv Final</td>
+                            <td>% Inv Final</td>
                             <td>% Utilidad</td>
                             <td> proyecto</td>
                             <td> Opciones</td>

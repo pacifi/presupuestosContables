@@ -32,4 +32,5 @@ public class ProyectoController {
         modelo.put("listaProyecto", lista);
         return new ModelAndView("contable/proyecto/proyectoMenu",modelo);
     }
+
 }

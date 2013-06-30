@@ -18,7 +18,7 @@
         <table border="1">
             <c:url value="productoActualizar.pacifi" var="productoG"/>
             <fm:form modelAttribute="ActualizarModelo" method="post" action="${productoG}">
-                <fm:hidden path="idProducto" /><br>
+                        <fm:hidden path="idProducto" /><br>
                 <tbody>
                     <tr>
 
