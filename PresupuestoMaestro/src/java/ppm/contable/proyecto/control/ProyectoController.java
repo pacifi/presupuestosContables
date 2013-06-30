@@ -42,7 +42,7 @@ public class ProyectoController {
 
     @RequestMapping(value = "proyectoGuardar", method = RequestMethod.POST)
     public ModelAndView guardarProducto(@ModelAttribute("ModeloProyecto") PpmProyecto proyecto, BindingResult result) {
-        proyectoServicio.insertaPeriodo(proyecto);
+        proyectoServicio.insertaProyecto(proyecto);
         return new ModelAndView("redirect:reporteProducto.pacifi");
     }
 
