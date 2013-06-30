@@ -12,10 +12,13 @@
 <html>
     <head>        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  <title>JSP Page</title>
+ <link type="text/css" rel="stylesheet" href="<c:url value="/Recursos/bootstrap/css/bootstrap.css"/>">
+        <script type="text/javascript" src="<c:url value="/Recursos/bootstrap/js/bootstrap.js"/>"></script>
 
 
     </head>
-    <table border="1">
+    <div class="container">
+        <table border="1" class="table">
         <body >        
 
             <div id="cuadroReporteR" style="width: 30%">
@@ -41,6 +44,7 @@
                 </div>             
             </div>
     </table>
+    </div>
 </body>
 </html>
 

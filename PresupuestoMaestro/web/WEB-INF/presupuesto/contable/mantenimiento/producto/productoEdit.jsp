@@ -11,11 +11,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link type="text/css" rel="stylesheet" href="<c:url value="/Recursos/bootstrap/css/bootstrap.css"/>">
+        <script type="text/javascript" src="<c:url value="/Recursos/bootstrap/js/bootstrap.js"/>"></script>
+
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <table border="1">
+        <h1>Esitar Producto</h1>
+        <div class="container">
+            <table border="1" class="table">
             <c:url value="productoActualizar.pacifi" var="productoG"/>
             <fm:form modelAttribute="ActualizarModelo" method="post" action="${productoG}">
                 <fm:hidden path="idProducto" /><br>
@@ -49,7 +53,7 @@
                 </tbody>
             </fm:form>  
         </table>
-
+</div>
 
     </body>
 </html>

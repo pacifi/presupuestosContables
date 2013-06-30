@@ -14,6 +14,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link type="text/css" rel="stylesheet" href="<c:url value="/Recursos/bootstrap/css/bootstrap.css"/>">
+        <script type="text/javascript" src="<c:url value="/Recursos/bootstrap/js/bootstrap.js"/>"></script>
+    
     </head>
     <body>
         
@@ -28,8 +31,11 @@
             }
             out.print(idProyecto);
         %>
-        <h1>Hello World!</h1>
-        <table border="1">
+        <h1>Formulario Registrar Producto</h1>
+      
+        <div class="container"> 
+       
+            <table border="1" class="table">
             <c:url value="productoGuardar.pacifi" var="productoG"/>
             <fm:form modelAttribute="ModeloProducto" method="post" action="${productoG}">
 
@@ -60,13 +66,13 @@
                     </tr>
                     <tr>
                         <td>Imprimir</td>
-                        <td> <input type="submit"  value="Registrar" name="registrar"/>
+                        <td> <input class="btn btn-primary"  type="submit"  value="Registrar" name="registrar"/>
                         </td>
                     </tr>
                 </tbody>
             </fm:form>  
         </table>
-
+</div>
 
     </body>
 </html>

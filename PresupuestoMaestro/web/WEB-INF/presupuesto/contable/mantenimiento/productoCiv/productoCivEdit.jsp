@@ -12,10 +12,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <link type="text/css" rel="stylesheet" href="<c:url value="/Recursos/bootstrap/css/bootstrap.css"/>">
+        <script type="text/javascript" src="<c:url value="/Recursos/bootstrap/js/bootstrap.js"/>"></script>
+
     </head>
     <body>
         <h1>Formulario Civ!</h1>
-        <table border="1">
+        <div class="container">
+            <table border="1" class="table">
             <c:url value="productoCivActualizar.pacifi" var="pro"/>
             <fm:form modelAttribute="ActualizarModelo" method="post" action="${pro}">
                 <fm:hidden path="id" /><br>
@@ -45,7 +49,7 @@
                 </tbody>
             </fm:form>  
         </table>
-
+        </div>
 
     </body>
 </html>
