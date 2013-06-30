@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Pacifi
+ * @author PacifiNote
  */
 @Entity
 @Table(name = "ppm_pronostico_venta")
@@ -112,5 +112,5 @@ public class PpmPronosticoVenta implements Serializable {
     public String toString() {
         return "ppm.contable.proyecto.modelo.PpmPronosticoVenta[ idPronostico=" + idPronostico + " ]";
     }
-   
+    
 }

@@ -5,7 +5,6 @@
 package ppm.contable.proyecto.modelo;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Pacifi
+ * @author PacifiNote
  */
 @Entity
 @Table(name = "ppm_producto_cif")
@@ -35,10 +34,9 @@ public class PpmProductoCif implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
     @Column(name = "precio_mes")
-    private BigDecimal precioMes;
+    private double precioMes;
     @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
     @ManyToOne(optional = false)
     private PpmProducto idProducto;
@@ -56,7 +54,7 @@ public class PpmProductoCif implements Serializable {
         this.id = id;
     }
 
-    public PpmProductoCif(Integer id, BigDecimal precioMes) {
+    public PpmProductoCif(Integer id, double precioMes) {
         this.id = id;
         this.precioMes = precioMes;
     }
@@ -69,11 +67,11 @@ public class PpmProductoCif implements Serializable {
         this.id = id;
     }
 
-    public BigDecimal getPrecioMes() {
+    public double getPrecioMes() {
         return precioMes;
     }
 
-    public void setPrecioMes(BigDecimal precioMes) {
+    public void setPrecioMes(double precioMes) {
         this.precioMes = precioMes;
     }
 
