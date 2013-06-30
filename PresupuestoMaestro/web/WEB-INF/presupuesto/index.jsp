@@ -12,8 +12,7 @@
     </head>
 
     <body>
-        <div class="container"><a href="reporteProyecto.pacifi">Proyectos</a></div>> 
-        <a href="reporteProducto.pacifi">ir Producto</a><br>
+        <div class="container"><a href="reporteProyecto.pacifi">Proyectos</a></div>
         <a href="formProducto.pacifi">insertarProducto</a> <br>
         <a href="reporte.pacifi">REPORTE PERIODO</a><br>
         <a href="reporteMedidas.pacifi">REPORTE MEDIDAS</a><br>
