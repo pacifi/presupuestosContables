@@ -1,14 +1,13 @@
 <%-- 
-    Document   : productoInsert
-    Created on : 21/06/2013, 03:33:53 PM
-    Author     : Pacifi
+    Document   : proyectoInsert
+    Created on : 30/06/2013, 02:15:02 PM
+    Author     : CarlosNoteBook
 --%>
-<%@page import="ppm.contable.proyecto.modelo.PpmProyecto"%>
-<%@page import="java.util.List"%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="fm" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,22 +15,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
-        <%
-            List<PpmProyecto> proyecto = (List<PpmProyecto>) request.getSession().getAttribute("NProyecto");
-            int idProyecto = 0;
-            for (PpmProyecto lista : proyecto) {
-
-                out.println("Proyecto: " + lista.getNombrePresupuestos());
-                out.println("Empresa: " + lista.getNombreEmpresa());
-                idProyecto = lista.getIdProyecto();
-            }
-            out.print(idProyecto);
-        %>
-        <h1>Hello World!</h1>
-        <table border="1">
-            <c:url value="productoGuardar.pacifi" var="productoG"/>
-            <fm:form modelAttribute="ModeloProducto" method="post" action="${productoG}">
+            <table border="1">
+            <c:url value="proyectoGuardar.pacifi" var="productoG"/>
+            <fm:form modelAttribute="ModeloProyecto" method="post" action="${productoG}">
 
                 <tbody>
                     <tr>
@@ -66,7 +52,6 @@
                 </tbody>
             </fm:form>  
         </table>
-
 
     </body>
 </html>
