@@ -53,20 +53,22 @@ public class PVentasController {
         List<ModelosPresupuestoVenta> lisr = new ArrayList();
 
         for (int j = 0; j < listaProducto.size(); j++) {
-         idProducto = listaProducto.get(j).getIdProducto();
-        for (int i = 0; i < 12; i++) {
-            pronosticoVentas = pvs.listaPronosticoVentasProducto(idProducto).get(i).getUnidadesVenta();
-            margenGanancia = (Double.parseDouble(String.valueOf(productoServicio.buscarProductoId(idProducto).getMargenGanancia())) / 100) + 1;
-            precioUnitario = margenGanancia * precio;
-            presupuestoVenta = precioUnitario * pronosticoVentas;
-            total = total + presupuestoVenta;
-            venta = new ModelosPresupuestoVenta();
-            venta.setMeses(pvs.listaPronosticoVenta().get(i).getIdMeses().getNombreMes());
-            venta.setPresupuesto(presupuestoVenta);
-            venta.setNombreProducto(productoServicio.buscarProductoId(idProducto).getNombreProducto());
-            venta.setTotal(total);
-            lisr.add(venta);
-        }
+            idProducto = listaProducto.get(j).getIdProducto();
+
+            for (int i = 0; i < 12; i++) {
+                pronosticoVentas = pvs.listaPronosticoVentasProducto(idProducto).get(i).getUnidadesVenta();
+                margenGanancia = (Double.parseDouble(String.valueOf(productoServicio.buscarProductoId(idProducto).getMargenGanancia())) / 100) + 1;
+                precioUnitario = margenGanancia * precio;
+                presupuestoVenta = precioUnitario * pronosticoVentas;
+                total = total + presupuestoVenta;
+                venta = new ModelosPresupuestoVenta();
+                venta.setMeses(pvs.listaPronosticoVenta().get(i).getIdMeses().getNombreMes());
+                venta.setPresupuesto(presupuestoVenta);
+                venta.setNombreProducto(productoServicio.buscarProductoId(idProducto).getNombreProducto());
+                venta.setTotal(total);
+                lisr.add(venta);
+
+            }
 
 
         }
