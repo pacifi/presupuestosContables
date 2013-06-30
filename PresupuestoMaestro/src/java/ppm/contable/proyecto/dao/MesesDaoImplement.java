@@ -9,12 +9,14 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import ppm.contable.proyecto.modelo.PpmMeses;
+import ppm.contable.proyecto.modelo.PpmPeriodo;
 
 /**
  *
  * @author Pc
  */
-public class MesesDaoImplement implements MesesDao{
+public class MesesDaoImplement implements MesesDao {
+
     @Autowired
     public SessionFactory sessionFactory;
 
@@ -28,5 +30,10 @@ public class MesesDaoImplement implements MesesDao{
             System.out.println("Error al listar meses" + e.getMessage());
         }
         return lista;
+    }
+
+    @Override
+    public PpmMeses buscarIdMeses(int idMeses) {
+        return (PpmMeses) sessionFactory.getCurrentSession().get(PpmPeriodo.class, idMeses);
     }
 }

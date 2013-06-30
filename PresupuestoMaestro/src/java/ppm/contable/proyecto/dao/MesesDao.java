@@ -12,5 +12,6 @@ import ppm.contable.proyecto.modelo.PpmMeses;
  * @author Pc
  */
 public interface MesesDao {
-  public List<PpmMeses> listaMeses();  
+  public List<PpmMeses> listaMeses(); 
+  public PpmMeses buscarIdMeses(int idMeses);
 }
