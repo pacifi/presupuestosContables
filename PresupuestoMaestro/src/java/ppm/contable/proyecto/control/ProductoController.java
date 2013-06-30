@@ -28,7 +28,7 @@ public class ProductoController {
     public ProductoServicio servicio;
     @Autowired
     public ProyectoServicio proyectoServicio;
-    /*@RequestMapping(value = "reporteProducto", method = RequestMethod.GET)
+    @RequestMapping(value = "reporteProducto", method = RequestMethod.GET)
      public ModelAndView irReporte() {
 
      List<PpmProducto> lista = servicio.listarProducto();
@@ -37,7 +37,7 @@ public class ProductoController {
 
      return new ModelAndView("contable/mantenimiento/producto/productoList", modelo);
 
-     }*/
+     }
 
     @RequestMapping(value = "irProductoProyecto", method = RequestMethod.GET)
     public ModelAndView irReporte(HttpServletRequest request) {
