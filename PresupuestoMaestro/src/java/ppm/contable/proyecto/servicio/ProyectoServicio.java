@@ -13,4 +13,5 @@ import ppm.contable.proyecto.modelo.PpmProyecto;
  */
 public interface ProyectoServicio {
     public List<PpmProyecto> listaProyecto();
+    public void insertaProyecto(PpmProyecto proyecto);
 }
