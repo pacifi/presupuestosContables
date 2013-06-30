@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Pacifi
+ * @author PacifiNote
  */
 @Entity
 @Table(name = "ppm_pronostico_venta")

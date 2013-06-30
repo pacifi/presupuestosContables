@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Pacifi
+ * @author PacifiNote
  */
 @Entity
 @Table(name = "ppm_meses")

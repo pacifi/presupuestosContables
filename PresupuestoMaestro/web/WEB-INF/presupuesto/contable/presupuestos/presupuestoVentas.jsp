@@ -40,18 +40,19 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${listaProducto}" var="pr">
-                <tr>  <td><c:out value="${pr.nombreProducto}"/></td>
-                </tr> 
+
+
+
                 <c:forEach items="${listaPresupuesto}" var="p">
                     <tr>
+                        <td><c:out value="${p.nombreProducto}"/></td>
                         <td><c:out value="${p.meses}"/></td>
                         <td><c:out value="${p.presupuesto}"/></td>
                         <td><c:out value="${p.total}"/></td>
-
                     </tr>
                 </c:forEach>
-                    </c:forEach>
+
+
             </tbody>
         </table>
         </div>

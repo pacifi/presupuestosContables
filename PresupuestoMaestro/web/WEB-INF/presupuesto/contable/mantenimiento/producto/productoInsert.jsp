@@ -29,6 +29,10 @@
                         <td><fm:input path="descripcion"/></td>
                     </tr>
                     <tr>
+                        <td><fm:label path="invInicial">% Inventario Inicial </fm:label></td>
+                        <td><fm:input path="invInicial"/></td>
+                    </tr>
+                    <tr>
                         <td><fm:label path="politicaInvfin">% para los inventarios finales</fm:label></td>
                         <td><fm:input path="politicaInvfin"/></td>
                     </tr>
@@ -37,7 +41,7 @@
                         <td><fm:input path="margenGanancia"/></td>
                     </tr>
                     <tr>
-                        <td><fm:label path="idProyecto.idProyecto">ingrese condigode su</fm:label></td>
+                        <td><fm:label path="idProyecto.idProyecto">Codigo del Proyecto</fm:label></td>
                         <td><fm:input path="idProyecto.idProyecto"/></td>
                     </tr>
                     <tr>

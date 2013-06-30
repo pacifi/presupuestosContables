@@ -68,6 +68,7 @@ public class PVentasController {
             lisr.add(venta);
         }
 
+
         }
 
         Map<String, Object> modelo = new HashMap<String, Object>();
