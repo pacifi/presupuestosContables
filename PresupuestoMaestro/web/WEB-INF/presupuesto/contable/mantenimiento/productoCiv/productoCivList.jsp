@@ -11,11 +11,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reporte de ProductosCivssss</title>
+        <link type="text/css" rel="stylesheet" href="<c:url value="/Recursos/bootstrap/css/bootstrap.css"/>">
+        <script type="text/javascript" src="<c:url value="/Recursos/bootstrap/js/bootstrap.js"/>"></script>
     </head>
     <body>  
         
-
-        <table border="2">
+<div class="container"> 
+        <table border="2" class="table">
 
             <thead >
                 <tr>
@@ -55,7 +57,7 @@
 
 
 
-
+</div>
 
     </body>
 </html>

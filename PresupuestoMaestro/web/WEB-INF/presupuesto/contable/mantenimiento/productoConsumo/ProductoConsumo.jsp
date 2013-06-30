@@ -11,12 +11,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link type="text/css" rel="stylesheet" href="<c:url value="/Recursos/bootstrap/css/bootstrap.css"/>">
+        <script type="text/javascript" src="<c:url value="/Recursos/bootstrap/js/bootstrap.js"/>"></script>
     </head>
     <body>
 
+        <div class="container"> 
 
-
-        <table border="1">
+        <table border="1" class="table">
             <h1>Reporte producto consumo</h1>
             <thead>
                 <tr>
@@ -52,7 +54,7 @@
                 </c:if>
             </tbody>
         </table>
-
+</div>
         <a href="index.pacifi">Ir Inicio</a>
 
 

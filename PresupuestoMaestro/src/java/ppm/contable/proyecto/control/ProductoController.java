@@ -4,6 +4,7 @@
  */
 package ppm.contable.proyecto.control;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,21 +17,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import ppm.contable.proyecto.modelo.PpmProducto;
+import ppm.contable.proyecto.modelo.PpmProyecto;
 import ppm.contable.proyecto.servicio.ProductoServicio;
+import ppm.contable.proyecto.servicio.ProyectoServicio;
 
 @Controller
 public class ProductoController {
 
     @Autowired
     public ProductoServicio servicio;
+    @Autowired
+    public ProyectoServicio proyectoServicio;
+    /*@RequestMapping(value = "reporteProducto", method = RequestMethod.GET)
+     public ModelAndView irReporte() {
 
-    @RequestMapping(value = "reporteProducto", method = RequestMethod.GET)
-    public ModelAndView irReporte() {
+     List<PpmProducto> lista = servicio.listarProducto();
+     Map<String, Object> modelo = new HashMap<String, Object>();
+     modelo.put("listaProducto", lista);
 
-        List<PpmProducto> lista = servicio.listarProducto();
+     return new ModelAndView("contable/mantenimiento/producto/productoList", modelo);
+
+     }*/
+
+    @RequestMapping(value = "irProductoProyecto", method = RequestMethod.GET)
+    public ModelAndView irReporte(HttpServletRequest request) {
+
+        int idProyecto = Integer.parseInt(request.getParameter("idProyecto") == null ? "" : request.getParameter("idProyecto"));
+        String nombreproyecto = request.getParameter("nombreProyecto") == null ? "" : request.getParameter("nombreProyecto");
+        String nombreempresa = request.getParameter("nombreEmpresa") == null ? "" : request.getParameter("nombreEmpresa");
+        PpmProyecto ppmProyecto = new PpmProyecto();
+        List<PpmProyecto> listaProyecto = new ArrayList<PpmProyecto>();
+        ppmProyecto.setNombreEmpresa(nombreempresa);
+        ppmProyecto.setNombrePresupuestos(nombreproyecto);
+        ppmProyecto.setIdProyecto(idProyecto);
+        listaProyecto.add(ppmProyecto);
+        
+        
+        request.getSession().setAttribute("NProyecto", listaProyecto);
+
+        List<PpmProducto> lista = servicio.listarProductodeProyecto(idProyecto);
         Map<String, Object> modelo = new HashMap<String, Object>();
         modelo.put("listaProducto", lista);
-
         return new ModelAndView("contable/mantenimiento/producto/productoList", modelo);
 
     }

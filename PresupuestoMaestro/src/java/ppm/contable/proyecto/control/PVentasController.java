@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,13 +35,13 @@ public class PVentasController {
     public PronosticoVentaServicio pvs;
 
     @RequestMapping(value = "presupuestoVentas", method = RequestMethod.GET)
-    public ModelAndView Presupuesto() {
+    public ModelAndView Presupuesto(HttpServletRequest request) {
         //precio unitario aca cambiar el precio por un dato que me retorne desde costo mas porcentaje de utilidad
         int precio = 100;
 
         //este id debe venir de una session
-        int idProyecto = 2;
-        int idProducto;
+        int idProyecto = Integer.parseInt(request.getParameter("idProyecto") == null ? "" : request.getParameter("idProyecto"));
+        int idProducto ;
         int pronosticoVentas;
         Double margenGanancia;
         Double precioUnitario;
@@ -50,22 +51,22 @@ public class PVentasController {
         List<PpmProducto> listaProducto = productoServicio.listarProductodeProyecto(idProyecto);
         ModelosPresupuestoVenta venta;
         List<ModelosPresupuestoVenta> lisr = new ArrayList();
-        
+
         for (int j = 0; j < listaProducto.size(); j++) {
-            idProducto = listaProducto.get(j).getIdProducto();
-            for (int i = 0; i < 12; i++) {
-                pronosticoVentas = pvs.listaPronosticoVentasProducto(idProducto).get(i).getUnidadesVenta();
-                margenGanancia = (Double.parseDouble(String.valueOf(productoServicio.buscarProductoId(idProducto).getMargenGanancia())) / 100) + 1;
-                precioUnitario = margenGanancia * precio;
-                presupuestoVenta = precioUnitario * pronosticoVentas;
-                total = total + presupuestoVenta;
-                venta = new ModelosPresupuestoVenta();
-                venta.setMeses(pvs.listaPronosticoVenta().get(i).getIdMeses().getNombreMes());
-                venta.setPresupuesto(presupuestoVenta);
-                venta.setNombreProducto(productoServicio.buscarProductoId(idProducto).getNombreProducto());
-                venta.setTotal(total);
-                lisr.add(venta);
-            }
+         idProducto = listaProducto.get(j).getIdProducto();
+        for (int i = 0; i < 12; i++) {
+            pronosticoVentas = pvs.listaPronosticoVentasProducto(idProducto).get(i).getUnidadesVenta();
+            margenGanancia = (Double.parseDouble(String.valueOf(productoServicio.buscarProductoId(idProducto).getMargenGanancia())) / 100) + 1;
+            precioUnitario = margenGanancia * precio;
+            presupuestoVenta = precioUnitario * pronosticoVentas;
+            total = total + presupuestoVenta;
+            venta = new ModelosPresupuestoVenta();
+            venta.setMeses(pvs.listaPronosticoVenta().get(i).getIdMeses().getNombreMes());
+            venta.setPresupuesto(presupuestoVenta);
+            venta.setNombreProducto(productoServicio.buscarProductoId(idProducto).getNombreProducto());
+            venta.setTotal(total);
+            lisr.add(venta);
+        }
 
         }
 

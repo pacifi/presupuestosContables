@@ -11,12 +11,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link type="text/css" rel="stylesheet" href="<c:url value="/Recursos/bootstrap/css/bootstrap.css"/>">
+        <script type="text/javascript" src="<c:url value="/Recursos/bootstrap/js/bootstrap.js"/>"></script>
     </head>
     <body>
         
         <c:if test="${!empty listMedidas}"> 
-           
-            <table border="1">
+           <div class="container"> 
+            <table border="1" class="table">
                 
                 
                 <thead>
@@ -46,7 +48,7 @@
                     </c:forEach>
                 </tbody>
             </table>
-
+           </div>>
         </c:if>
          <a href="index.pacifi">Ir Inicio</a>
          
