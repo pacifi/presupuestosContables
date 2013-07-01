@@ -17,44 +17,42 @@
     <body>
 
         <div class="container"> 
+            <h3>Reporte producto consumo<a href="formProductoConsumo.pacifi">nuevo</a></h3>
+            <table border="1" class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>#</td>
+                        <td>Nombre de Comsumo</td>
+                        <td>Precio Unitario</td>
+                        <td>Medida Base</td>
+                        <td>Cantidad</td>
+                        <td>Precio Totals</td>
+                        <td>Tipo de Comsumo</td>
 
-        <table border="1" class="table">
-            <h1>Reporte producto consumo</h1>
-            <thead>
-                <tr>
-                    <th colspan="6"> REPORTE PRODUCTO CONSUMO<a href="formProductoConsumo.pacifi">        INSERTA PRODUCTO CONSUMO</a>    
-                             </th>
+                    </tr>
+                    <c:if test="${!empty listProductoConsumo}"> 
+                        <c:set var="i" value="1"/>
+                        <c:forEach items="${listProductoConsumo}" var="m">
+                            <tr>
+                                <td><c:out value="${i}"/></td>
+                                <td><c:out value="${m.idConsumo.nombreConsumo}"/></td>
+                                <td><c:out value="${m.idConsumo.precioUnitario}"/></td>
+                                <td><c:out value="${m.idConsumo.medidaBase}"/></td>
+                                <td><c:out value="${m.cantidadUso}"/></td>
+                                <td><c:out value="${m.precioGenerado}"/></td>
+                                <td><c:out value="${m.idConsumo.tipoConsumo}"/></td>
+                                <td> 
+                                    <a href="eliminarProductoConsumo.pacifi?idPCon=${m.id}">Eliminar</a> 
+                                    <a href="editarProductoConsumo.pacifi?idProductoConsumoP=${m.id}">Editar</a> 
+                                </td>
+                            </tr> 
+                            <c:set var="1" value="${i+1}"/>
+                        </c:forEach>
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Id PRODUCTO CONSUMO</td>
-                    <td>NOMBRE CONSUMO</td>
-                    <td>PRECIO UNITARIO</td>
-                    <td>MEDIDA BACE</td>
-                    <td>TIPO CONSUMO</td>
-                    
-                </tr>
-                <c:if test="${!empty listProductoConsumo}"> 
-                    <c:forEach items="${listProductoConsumo}" var="m">
-                        <tr>
-                            <td><c:out value="${m.id}"/></td>
-                            <td><c:out value="${m.cantidadUso}"/></td>
-                            <td><c:out value="${m.precioGenerado}"/></td>
-                            <td><c:out value="${m.idProducto.nombreProducto}"/></td>
-                            <td><c:out value="${m.idConsumo.nombreConsumo}"/></td>
-                            <td> 
-                                <a href="eliminarProductoConsumo.pacifi?idPCon=${m.id}">Eliminar</a> 
-                                <a href="editarProductoConsumo.pacifi?idProductoConsumoP=${m.id}">Editar</a> 
-                            </td>
-                        </tr> 
-                    </c:forEach>
-
-                </c:if>
-            </tbody>
-        </table>
-</div>
+                    </c:if>
+                </tbody>
+            </table>
+        </div>
         <a href="index.pacifi">Ir Inicio</a>
 
 
