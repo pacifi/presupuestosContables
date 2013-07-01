@@ -91,7 +91,6 @@
         <a href="reporteProductoConsumo.pacifi">REPORTE  CONSUMO</a><br>
         <a href="reporteCatalogoCiv.pacifi">ir reporte catalogo civ</a><br>
         <a href="reporteCatalogoCif.pacifi"> catalogo cif</a><br>
-        <a href="reporteProductoCiv.pacifi"> catalogo productoCiv</a><br>
         <a href="reportePronostico.pacifi"> ir al reporte Pronostico</a><br>
         <a href="presupuestoVentas.pacifi"> ir prueba </a><br>
     </body>

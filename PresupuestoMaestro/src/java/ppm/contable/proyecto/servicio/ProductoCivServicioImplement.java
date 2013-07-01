@@ -26,8 +26,8 @@ public class ProductoCivServicioImplement implements ProductoCivServicio {
     public ProductoCivDao dao;
 
     @Override
-    public List<PpmProductoCiv> listarProductoCiv() {
-        return dao.listarPpmProductoCiv();
+    public List<PpmProductoCiv> listarProductoCiv(int id) {
+        return dao.listarPpmProductoCiv(id);
     }
 
     @Override

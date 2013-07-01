@@ -15,7 +15,7 @@ import ppm.contable.proyecto.modelo.PpmProductoCiv;
  */
 public interface ProductoCivServicio {
 
-    public List<PpmProductoCiv> listarProductoCiv();
+    public List<PpmProductoCiv> listarProductoCiv(int id);
 
     public void insertarProductoCiv(PpmProductoCiv productoCiv);
 

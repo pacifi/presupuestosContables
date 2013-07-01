@@ -15,7 +15,7 @@ public interface ProductoServicio {
 
     public List<PpmProducto> listarProducto();
 
-    public void insertaPeriodo(PpmProducto producto);
+    public void insertaProducto(PpmProducto producto);
 
     public void eliminarProducto(int idProducto);
 

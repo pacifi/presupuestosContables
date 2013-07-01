@@ -25,10 +25,14 @@ public class ProductoCivDaoImplement implements ProductoCivDao {
     public SessionFactory sessionFactory;
 
     @Override
-    public List<PpmProductoCiv> listarPpmProductoCiv() {
+    public List<PpmProductoCiv> listarPpmProductoCiv(int id) {
         List<PpmProductoCiv> lista = new ArrayList<PpmProductoCiv>();
         try {
-            lista = sessionFactory.getCurrentSession().createCriteria(PpmProductoCiv.class).list();
+            //lista = sessionFactory.getCurrentSession().createCriteria(PpmProductoCiv.class).list();
+            lista = sessionFactory.getCurrentSession()
+                    .createQuery( "SELECT p FROM PpmProductoCiv p WHERE p.idProducto=?")
+                    .setInteger(0, id)
+                    .list();
         } catch (Exception e) {
             System.out.println("error al listar producto civ" + e.getMessage());
         }

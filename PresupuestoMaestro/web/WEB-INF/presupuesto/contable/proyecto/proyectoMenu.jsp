@@ -15,26 +15,29 @@
         <script type="text/javascript" src="<c:url value="/Recursos/bootstrap/js/bootstrap.js"/>"></script>
     </head>
     <body>
-        <div class="container">
-            <table border="1" class="table">
-                <thead>
-                    <tr>
-                        <th>Proyecto</th>
-                        <th>Empresa</th>
-                        <th>Año</th>
-                        <th>Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
 
-                <c:forEach items="${listaProyecto}" var="p">
+        <div class="container">
+            <h3>Lista de Proyecto</h3>
+            <table border="1" class="table table-striped">
+                <tbody>
                     <tr>
-                    <td><c:out value="${p.nombrePresupuestos}"/></td>
-                    <td><c:out value="${p.nombreEmpresa}"/></td>
-                    <td><c:out value="${p.idPeriodo.anioPronostico}"/></td>
-                    <td><a href="irProductoProyecto.pacifi?idProyecto=${p.idProyecto}&nombreProyecto=${p.nombrePresupuestos}&nombreEmpresa=${p.nombreEmpresa}"> Ir Proyecto</a></td>
+                        <td>#</td>
+                        <td>Proyecto</td>
+                        <td>Empresa</td>
+                        <td>Año</td>
+                        <td>Opciones</td>
                     </tr>
-                </c:forEach>
+                    <c:set var="i" value="1" />
+                    <c:forEach items="${listaProyecto}" var="p">
+                        <tr>
+                            <td><c:out value="${i}"/></td>
+                            <td><c:out value="${p.nombrePresupuestos}"/></td>
+                            <td><c:out value="${p.nombreEmpresa}"/></td>
+                            <td><c:out value="${p.idPeriodo.anioPronostico}"/></td>
+                            <td><a href="irProductoProyecto.pacifi?idProyecto=${p.idProyecto}&nombreProyecto=${p.nombrePresupuestos}&nombreEmpresa=${p.nombreEmpresa}"> Ir Proyecto</a></td>
+                        </tr>
+                        <c:set var="i" value="${i+1}" />
+                    </c:forEach>
                 </tbody>
             </table>
         </div>

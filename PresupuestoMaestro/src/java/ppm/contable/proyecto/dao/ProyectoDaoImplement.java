@@ -36,7 +36,7 @@ public class ProyectoDaoImplement implements ProyectoDao{
     }
     
     @Override
-    public void insertaProducto(PpmProyecto proyecto) {
+    public void insertaProyecto(PpmProyecto proyecto) {
         try {
             Session session = sessionFactory.openSession();
             session.beginTransaction().begin();

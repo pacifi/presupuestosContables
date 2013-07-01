@@ -17,9 +17,10 @@
 
     </head>
     <body>
-        <h1>Formulario Civ!</h1>
+        
         <div class="container">
-            <table border="1" class="table">
+            <h1>Formulario Civ</h1>
+            <table>
             <c:url value="productoCivActualizar.pacifi" var="pro"/>
             <fm:form modelAttribute="ActualizarModelo" method="post" action="${pro}">
                 <fm:hidden path="id" /><br>
@@ -42,8 +43,9 @@
                     </tr>
 
                     <tr>
-                        <td>Imprimir</td>
-                        <td> <input type="submit"  value="Registrar" name="registrar"/>
+                        <td></td>
+                        <td>
+                            <input class="btn btn-success"type="submit"  value="Guardar" name="registrar"/>
                         </td>
                     </tr>
                 </tbody>

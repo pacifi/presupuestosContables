@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -28,6 +29,7 @@ public class ProductoController {
     public ProductoServicio servicio;
     @Autowired
     public ProyectoServicio proyectoServicio;
+    
     /*@RequestMapping(value = "reporteProducto", method = RequestMethod.GET)
      public ModelAndView irReporte() {
 
@@ -40,19 +42,19 @@ public class ProductoController {
      }*/
 
     @RequestMapping(value = "irProductoProyecto", method = RequestMethod.GET)
-    public ModelAndView irReporte(HttpServletRequest request) {
+    public ModelAndView irReporte(HttpServletRequest request, HttpServletResponse response) {
 
         int idProyecto = Integer.parseInt(request.getParameter("idProyecto") == null ? "" : request.getParameter("idProyecto"));
         String nombreproyecto = request.getParameter("nombreProyecto") == null ? "" : request.getParameter("nombreProyecto");
         String nombreempresa = request.getParameter("nombreEmpresa") == null ? "" : request.getParameter("nombreEmpresa");
+        
+        
         PpmProyecto ppmProyecto = new PpmProyecto();
         List<PpmProyecto> listaProyecto = new ArrayList<PpmProyecto>();
         ppmProyecto.setNombreEmpresa(nombreempresa);
         ppmProyecto.setNombrePresupuestos(nombreproyecto);
         ppmProyecto.setIdProyecto(idProyecto);
         listaProyecto.add(ppmProyecto);
-        
-        
         request.getSession().setAttribute("NProyecto", listaProyecto);
 
         List<PpmProducto> lista = servicio.listarProductodeProyecto(idProyecto);
@@ -68,16 +70,34 @@ public class ProductoController {
     }
 
     @RequestMapping(value = "productoGuardar", method = RequestMethod.POST)
-    public ModelAndView guardarProducto(@ModelAttribute("ModeloProducto") PpmProducto producto, BindingResult result) {
-        servicio.insertaPeriodo(producto);
-        return new ModelAndView("redirect:reporteProducto.pacifi");
+    public ModelAndView guardarProducto(@ModelAttribute("ModeloProducto") PpmProducto producto, BindingResult result ) {
+        servicio.insertaProducto(producto);
+        return new ModelAndView("redirect:reporteProductoGuardado.pacifi");
+    }
+    @RequestMapping(value = "reporteProductoGuardado", method = RequestMethod.GET)
+    public ModelAndView reporteGuardarProducto(HttpServletRequest request, HttpServletResponse response) {
+        
+        List<PpmProyecto> proyecto = (List<PpmProyecto>) request.getSession().getAttribute("NProyecto");
+            int idProyecto = 0;
+            for (PpmProyecto lista : proyecto) {
+
+                System.out.println("Proyecto: " + lista.getNombrePresupuestos());
+                System.out.println("Empresa: " + lista.getNombreEmpresa());
+                idProyecto = lista.getIdProyecto();
+            }
+            System.out.print(idProyecto);
+        
+        List<PpmProducto> lista = servicio.listarProductodeProyecto(idProyecto);
+        Map<String, Object> modelo = new HashMap<String, Object>();
+        modelo.put("listaProducto", lista);
+        return new ModelAndView("contable/mantenimiento/producto/productoList", modelo);
     }
 
     @RequestMapping(value = "eliminarProducto", method = RequestMethod.GET)
     public ModelAndView eliminarProducto(HttpServletRequest request) {
         int idProducto = Integer.parseInt(request.getParameter("idProductoP") == null ? "" : request.getParameter("idProductoP"));
         servicio.eliminarProducto(idProducto);
-        return new ModelAndView("redirect:reporteProducto.pacifi");
+        return new ModelAndView("redirect:reporteProductoGuardado.pacifi");
     }
     /*Editar Periodo*/
 
@@ -95,6 +115,6 @@ public class ProductoController {
     @RequestMapping(value = "productoActualizar", method = RequestMethod.POST)
     public ModelAndView actualizarProducto(@ModelAttribute("ActualizarModelo") PpmProducto producto, BindingResult result) {
         servicio.actualizarProducto(producto);
-        return new ModelAndView("redirect:reporteProducto.pacifi");
+        return new ModelAndView("redirect:reporteProductoGuardado.pacifi");
     }
 }

@@ -17,9 +17,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Esitar Producto</h1>
         <div class="container">
-            <table border="1" class="table">
+        <h1>Editar Producto</h1>
+        <table>
             <c:url value="productoActualizar.pacifi" var="productoG"/>
             <fm:form modelAttribute="ActualizarModelo" method="post" action="${productoG}">
                 <fm:hidden path="idProducto" /><br>
@@ -46,14 +46,13 @@
                         <td><fm:input path="idProyecto.idProyecto"/></td>
                     </tr>
                     <tr>
-                        <td>Imprimir</td>
-                        <td> <input type="submit"  value="Guardar" name="registrar"/>
+                        <td></td>
+                        <td><input class="btn btn-success" type="submit"  value="Guardar" name="registrar"/>
                         </td>
                     </tr>
                 </tbody>
             </fm:form>  
         </table>
-</div>
-
+            </div>
     </body>
 </html>

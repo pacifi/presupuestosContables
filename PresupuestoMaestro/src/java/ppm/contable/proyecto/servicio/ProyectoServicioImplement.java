@@ -29,6 +29,6 @@ public class ProyectoServicioImplement implements ProyectoServicio{
     }
     @Override
     public void insertaProyecto(PpmProyecto proyecto) {
-        proyectoDao.insertaProducto(proyecto);
+        proyectoDao.insertaProyecto(proyecto);
     }
 }

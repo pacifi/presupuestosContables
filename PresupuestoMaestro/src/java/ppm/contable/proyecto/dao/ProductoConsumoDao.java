@@ -13,7 +13,7 @@ import ppm.contable.proyecto.modelo.PpmProductoConsumo;
  */
 public interface ProductoConsumoDao {
 
-    public List<PpmProductoConsumo> listaProductoConsumo();
+    public List<PpmProductoConsumo> listaProductoConsumo(int id);
 
     public void insertarProductoConsumo(PpmProductoConsumo productoConsumo);
 

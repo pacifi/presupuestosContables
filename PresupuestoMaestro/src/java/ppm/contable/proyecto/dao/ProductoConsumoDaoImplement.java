@@ -4,6 +4,7 @@
  */
 package ppm.contable.proyecto.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -22,8 +23,20 @@ public class ProductoConsumoDaoImplement implements ProductoConsumoDao{
     public SessionFactory sesionFactory;    // a travez de sessionFactory podemos conectarnos a la base de datos
     
     @Override
-    public List<PpmProductoConsumo> listaProductoConsumo(){
-        return sesionFactory.getCurrentSession().createCriteria(PpmProductoConsumo.class).list();
+    public List<PpmProductoConsumo> listaProductoConsumo(int id){
+        //return sesionFactory.getCurrentSession().createCriteria(PpmProductoConsumo.class).list();
+        List<PpmProductoConsumo> lista = new ArrayList<PpmProductoConsumo>();
+        try {
+            //lista = sessionFactory.getCurrentSession().createCriteria(PpmProductoCiv.class).list();
+            lista = sesionFactory.getCurrentSession()
+                    .createQuery( "SELECT p FROM PpmProductoConsumo p WHERE p.idProducto=?")
+                    .setInteger(0, id)
+                    .list();
+        } catch (Exception e) {
+            System.out.println("error al listar producto consumo :" + e.getMessage());
+        }
+
+        return lista;
     }
     
        @Override

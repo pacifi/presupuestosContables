@@ -26,8 +26,8 @@ public class ProductoConsumoServicioImplement implements ProductoConsumoServicio
     public ProductoConsumoDao productoConsumoDao;
 
     @Override
-    public List<PpmProductoConsumo> listaProductoConsumo() {
-        return productoConsumoDao.listaProductoConsumo();
+    public List<PpmProductoConsumo> listaProductoConsumo(int id) {
+        return productoConsumoDao.listaProductoConsumo(id);
     }
 
     @Override

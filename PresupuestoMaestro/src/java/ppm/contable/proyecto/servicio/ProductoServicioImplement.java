@@ -29,7 +29,7 @@ public class ProductoServicioImplement implements ProductoServicio {
     }
 
     @Override
-    public void insertaPeriodo(PpmProducto producto) {
+    public void insertaProducto(PpmProducto producto) {
         dao.insertaProducto(producto);
     }
 

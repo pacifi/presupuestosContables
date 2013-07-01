@@ -14,7 +14,7 @@ import ppm.contable.proyecto.modelo.PpmProductoCiv;
  * @author Pacifi
  */
 public interface ProductoCivDao {
-     public List<PpmProductoCiv> listarPpmProductoCiv();
+     public List<PpmProductoCiv> listarPpmProductoCiv(int id);
     public void insertaProductoCiv(PpmProductoCiv productoCiv);
     public void eliminarProductoCiv(int id);
     public PpmProductoCiv buscaProductoCivId(int id);

@@ -34,42 +34,46 @@
         %>
 
 
-
         <c:if test="${!empty listaProducto}">
             <div class="container"> 
-                <table border="1" class="table">
+                <table border="1" class="table table-striped">
 
-                    <thead >
-                        <tr>
-                            <th colspan="7">Reporte de productos  <a href="formProducto.pacifi">INSERTAR PRODUCTOS</a></th>
-                        </tr>
-                    </thead>
+                    <h3>Reporte de productos <a href="formProducto.pacifi">INSERTAR PRODUCTOS</a></h3> 
+
                     <tbody>
                         <tr>
-                            <td>id Producto</td>
+                            <td>#</td>
                             <td>Nombre Producto</td>
                             <td>descripcion</td>
                             <td>% Inv Final</td>
                             <td>% Utilidad</td>
                             <td> proyecto</td>
+                            <td>Catalogo</td>
                             <td> Opciones</td>
 
                         </tr>
+                        <c:set var="i" value="1" />
                         <c:forEach items="${listaProducto}" var="p">
-
+                            
                             <tr>
-                                <td><c:out value="${p.idProducto}"/> </td>
+                                <td><c:out value="${i}"/> </td>
                                 <td><c:out value="${p.nombreProducto}"/> </td>
                                 <td><c:out value="${p.descripcion}"/> </td>
                                 <td><c:out value="${p.politicaInvfin}"/> </td>
                                 <td><c:out value="${p.margenGanancia}"/> </td>
                                 <td><c:out value="${p.idProyecto.nombrePresupuestos}"/> </td>
+                                <td>
+                                    <a href="reporteProductoCiv.pacifi?idProducto=${p.idProducto}&nombreProducto=${p.nombreProducto}">civ</a>
+                                    <a href="reporteProductoConsumo.pacifi?idProducto=${p.idProducto}&nombreProducto=${p.nombreProducto}">Consumo</a>
+                                </td>
                                 <td> 
                                     <a href="eliminarProducto.pacifi?idProductoP=${p.idProducto}">Eliminar</a> 
                                     <a href="editarProductoForm.pacifi?idProductoP=${p.idProducto}">Editar</a> 
 
-                                </td></tr>
-                            </c:forEach>
+                                </td>
+                                </tr>
+                            <c:set var="i" value="${i+1}"/>
+                        </c:forEach>
 
 
                     </tbody>
