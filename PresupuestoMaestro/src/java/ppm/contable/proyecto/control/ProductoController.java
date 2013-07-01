@@ -39,7 +39,7 @@ public class ProductoController {
 
      return new ModelAndView("contable/mantenimiento/producto/productoList", modelo);
 
-     }
+     }*/
 
     @RequestMapping(value = "irProductoProyecto", method = RequestMethod.GET)
     public ModelAndView irReporte(HttpServletRequest request, HttpServletResponse response) {
